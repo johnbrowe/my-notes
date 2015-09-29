@@ -1,0 +1,335 @@
+----
+1. MySQL Workbench login to homestead
+
+Choose connection method: Standard TCP/IP over SSH
+
+Connection name: What Ever you want
+SSH Hostname: 127.0.0.1
+SSH Username: vagrant
+SSH Key File: if you don't have a key you need to create one with putty or through git bash
+MySQL hostname: 127.0.0.1
+MySQL Server Port: 3306
+Username: homestead
+password: secret	
+
+
+http://stackoverflow.com/questions/27202109/unable-to-access-the-database-of-homestead-environment-laravel-through-mysql-w
+----
+
+2. Set path and enviroment variables Windows 7
+
+Right-click the Computer icon and select Properties. 
+Click the Advanced System Settings it on the left hand side.
+In the System Properties window, click on the Advanced tab, then click the Environment Variables.
+In the Environment Variables window highlight the Path variable in the "System variables" section and click the Edit button. 
+Add or modify the path lines with the paths you want the computer to access. 
+
+You can also set the path via the command prompt (search: cmd)
+For example I set my path when installing nodejs like this.
+If the path is: C:\Program Files\Nodejs do like this.
+
+This string will be set the enviroment variable til you close prompt:
+SET PATH=C:\Program Files\Nodejs;%PATH%
+
+This will set the variable for good:
+setx path "%path%;C:\Program Files\Nodejs"
+
+Links:
+http://www.computerhope.com/issues/ch000549.htm
+http://stackoverflow.com/questions/12155268/ruby-environment-variables
+
+3. Getting Gulp to work on Windows 7 
+
+I have had a hard time gettin Gulp and Bower to work on windows, and especially on git bash which I prefer.
+
+The problem was that after installing everything I needed it still gave the error:
+$Gulp
+sh.exe": Gulp: command not found
+
+$bower
+sh.exe": bower: command not found
+
+I got it to work on the command prompt but still would not work in Git BASH until i set a enviroment variable to:
+C:\Users\me\AppData\Roaming\npm;
+
+
+http://stackoverflow.com/questions/23638431/issue-installing-bower-on-windows
+
+
+4. Bootstrap Column Ordering
+I keep forgetting the name of this usefull function
+
+This is mainly when you  need to change order of the column layout.
+
+http://getbootstrap.com/css/#grid-column-ordering
+
+
+5. Z-index only working in Chrome bug
+I had a cross browser bug which involved z-index only not working in Chrome, the solution was to change position to absolute instead of relative.
+ 
+.element {
+  position: relative;
+  z-index: 1;
+}
+
+to 
+
+.element {
+  position: absolute;
+  z-index: 1;
+}
+
+6. Shy hyphens
+
+If you need a "tag" which will set the dash where you want on line break shy is the answer.
+
+&shy; 
+
+for example:
+
+Progmm&shy;ing
+
+
+Link: http://www.impressivewebs.com/new-css3-text-wrap/
+
+
+7. Currenct path in command line
+
+If you want the full path to current directory/folder in the command line.
+
+In Windows:
+chdir
+
+In ubuntu (guess in most linux OS):
+pwd
+ 
+
+8. Bower update error
+After updating Bower i got this message.
+-bash: /usr/bin/bower: No such file or directory
+
+After trying different solutions i ended up with just trying to install it again:
+sudo npm install -g bower
+
+And it worked like a charm.
+
+
+9. Vagrant Box stopped working
+
+I got this error after updating homestead.
+
+My solution was to delete current version, installing it again. 
+In my case when updating there where 2 box versions, I think this could have been the problem though im not sure.
+
+Open command line and write: 
+vagrant box list
+
+to see what boxes you have. In my case this was the result:
+laravel/homestead (virtualbox, 0.2.5)
+laravel/homestead (virtualbox, 0.2.6)
+
+To delete them you write:
+vagrant box remove laravel/homestead --box-version 0.2.5
+vagrant box remove laravel/homestead --box-version 0.2.6
+
+After that cd to the homestead folder and write:
+vagrant add laravel/homestead
+
+
+10. Share email button
+Just a snippet for sharing a page
+
+<a href="mailto:?subject=Header text;body=Nice news"
+   title="Share by Email">
+  <i class="fa fa-envelope-o"></i> <!-- or some other icon (this snippet depends on font-awesome) -->
+</a>
+
+Link: http://stackoverflow.com/questions/5045918/adding-a-share-by-email-link-to-website
+
+
+11. Javascript round up to nearest number
+
+Here is how:
+
+2 * Math.round(number / 2);
+
+Example
+2 * Math.round(3 / 2);  /* output 4 */
+2 * Math.round(8 / 2);  /* output 8 */
+2 * Math.round(11 / 2); /* output 12 */
+
+
+12. Shortening line with CSS
+
+http://codepen.io/siiron/pen/jfBhy/?editors=110
+
+
+13. CSS vertical align text - 23.06.2015
+
+There are different ways to vertical align text, for example with table.
+
+But I find this as the easiest way, add this to the div. you are trying to align.
+
+In my case:
+
+HTML:
+<div class="single-activity">
+    <span>Sprint</span>
+</div>
+
+CSS:
+.single-activity {
+height: 45px;
+line-height: 45px;
+vertical-align: middle;
+}
+
+
+
+Inspiration links:
+http://stackoverflow.com/questions/9249359/is-it-possible-to-vertically-align-text-within-a-div
+
+
+14. CSS + selector
+
+The + selector comes in handy sometimes.
+
+.class + p { background: green; }
+
+It will selects all p's that are placed immediately after .class
+
+
+15. Windows 7 Hostfile path
+
+C:\Windows\System32\drivers\etc 
+
+Remember to run Nodepad or another editor as Administrator to be able to edit, also change the .txt dropdown to All files.
+
+
+16. Debugging/Freezing Bootstrap tooltips & popover
+It can be hard to style certain element because they disappear when you try to click on them.
+
+This is certainly the case with Bootstrap tooltips & popovers, when you try to inspect the element it will disappear.
+
+My solution is to this problem is to make them visible with JavaScript, here is how:
+
+$('[data-toggle="tooltip"]').tooltip('show');
+
+OR
+
+$('[data-toggle="popover"]').popover('show');
+
+then through the developer tool navigate through the HTML to the popover element which in this case will not disappear.
+
+
+17. Click not working on iPhone
+
+I could not get a click event to fire on an iPhone, it worked on desktop.
+
+Solution: click event needed to be an <a> tag, so I just changed the element to <a> and the event fired perfectly. 
+
+Link: http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery
+
+
+18. Styling width based on sibling count
+
+Here is a link to a good article on this subject.
+
+http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/
+
+
+19. Responsive video
+
+I used this link to solve my responsive vimeo video. 
+
+https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+
+
+20. Aspect ratio
+
+I needed to get the aspect ratio of an image, i new the
+
+This link helped me with aspect ratio.
+
+http://math.stackexchange.com/questions/180804/how-to-get-the-aspect-ratio-of-an-image
+
+
+21.Flexbox float left
+
+Flexbox threats margin differently so to float left with flexbox write.
+
+margin-left: auto;
+
+Another way is:
+
+flex: 1;
+text-align: right;
+
+http://codepen.io/nickautomatic/pen/epYVaj
+
+http://stackoverflow.com/questions/22429003/right-aligning-flex-item
+
+
+22. PhpStorm livetemplates not reacting on changes
+
+Remember to choose the right context to use the template.
+
+Right click on the create template and choose change context, then choose the context. 
+
+In my case i only wanted the template to be availible in Javascript.
+
+
+23. GIT command for removing ignore files 
+
+git rm -r --cached "path"
+
+In my case
+
+git rm -r --cached public/css/
+
+
+24. Location hash mobile not working
+
+Safari can read window.location.hash, but if you need to change hash you need to use window.location.href (twice safari bug).
+
+
+if ( $.browser.webkit == false ) {
+            window.location.hash = location.hash;
+        } else {
+            window.location.href = location.hash;
+            window.location.href = location.hash;
+        }
+
+
+25. 
+
+http://stackoverflow.com/questions/6970769/window-location-hash-location-hash-does-not-work-in-webkit-safari-chrome
+
+
+
+ICONS:
+http://www.flaticon.com/
+
+
+BOOKMARKS:
+https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md
+http://ulyssesonline.com/2014/07/24/install-laravel-4-2-on-ubuntu-server-14-04-lts/
+http://raspberrywebserver.com/serveradmin/get-your-raspberry-pi-web-site-on-line.html
+Google fonts - http://katydecorah.com/font-library/#/tattoo
+
+LOOKUPS:
+http://www.imagemagick.org/
+
+TO READ:
+OOCSS, SMACSS & BEM
+https://mattstauffer.co/blog/organizing-css-oocss-smacss-and-bem
+http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+https://smacss.com/
+http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+https://coderwall.com/p/wixovg/bootstrap-without-all-the-debt
+https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06
+http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
+
+My CSS Lookups:
+http://www.sitepoint.com/web-foundations/nth-typen-css-selector/
+http://www.sitepoint.com/web-foundations/understanding-nth-child-pseudo-class-expressions/
