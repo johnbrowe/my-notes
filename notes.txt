@@ -1,5 +1,36 @@
 ----
-1. MySQL Workbench login to homestead
+
+46. A git to remember
+
+git add -A 
+git commit
+
+----
+
+45. Disable/turn off autosave on PHPStorm
+
+Sometimes auto save does not really work so well with File watchers and you really like the watcher only to react when you hitt Save.
+
+Here is what you do 
+
+Unchecked - Settings / Appearance & Behavior / System Settings / Save file on frame deactivation
+Unchecked - Settings / Appearance & Behavior / System Settings / Save files automatically if...
+Unchecked - Settings / Editor / General / Editor tabs / Mark modified tabs with asterisk 
+
+This solution was found in stackoverflow on this link:
+http://stackoverflow.com/questions/15604889/how-to-turn-off-automatic-saving-on-web-storm
+
+
+----
+
+44. Shortening line with CSS
+
+http://codepen.io/siiron/pen/jfBhy/?editors=110
+
+
+----
+
+43. MySQL Workbench login to homestead
 
 Choose connection method: Standard TCP/IP over SSH
 
@@ -14,9 +45,10 @@ password: secret
 
 
 http://stackoverflow.com/questions/27202109/unable-to-access-the-database-of-homestead-environment-laravel-through-mysql-w
+
 ----
 
-2. Set path and enviroment variables Windows 7
+42. Set path and enviroment variables Windows 7
 
 Right-click the Computer icon and select Properties. 
 Click the Advanced System Settings it on the left hand side.
@@ -38,7 +70,9 @@ Links:
 http://www.computerhope.com/issues/ch000549.htm
 http://stackoverflow.com/questions/12155268/ruby-environment-variables
 
-3. Getting Gulp to work on Windows 7 
+----
+
+41. Getting Gulp to work on Windows 7 
 
 I have had a hard time gettin Gulp and Bower to work on windows, and especially on git bash which I prefer.
 
@@ -55,16 +89,18 @@ C:\Users\me\AppData\Roaming\npm;
 
 http://stackoverflow.com/questions/23638431/issue-installing-bower-on-windows
 
+----
 
-4. Bootstrap Column Ordering
+40. Bootstrap Column Ordering
 I keep forgetting the name of this usefull function
 
 This is mainly when you  need to change order of the column layout.
 
 http://getbootstrap.com/css/#grid-column-ordering
 
+----
 
-5. Z-index only working in Chrome bug
+39. Z-index only working in Chrome bug
 I had a cross browser bug which involved z-index only not working in Chrome, the solution was to change position to absolute instead of relative.
  
 .element {
@@ -79,7 +115,9 @@ to
   z-index: 1;
 }
 
-6. Shy hyphens
+----
+
+38. Shy hyphens
 
 If you need a "tag" which will set the dash where you want on line break shy is the answer.
 
@@ -92,8 +130,9 @@ Progmm&shy;ing
 
 Link: http://www.impressivewebs.com/new-css3-text-wrap/
 
+----
 
-7. Currenct path in command line
+37. Currenct path in command line
 
 If you want the full path to current directory/folder in the command line.
 
@@ -103,8 +142,9 @@ chdir
 In ubuntu (guess in most linux OS):
 pwd
  
+----
 
-8. Bower update error
+36. Bower update error
 After updating Bower i got this message.
 -bash: /usr/bin/bower: No such file or directory
 
@@ -113,8 +153,9 @@ sudo npm install -g bower
 
 And it worked like a charm.
 
+----
 
-9. Vagrant Box stopped working
+35. Vagrant Box stopped working
 
 I got this error after updating homestead.
 
@@ -136,7 +177,9 @@ After that cd to the homestead folder and write:
 vagrant add laravel/homestead
 
 
-10. Share email button
+----
+
+34. Share email button
 Just a snippet for sharing a page
 
 <a href="mailto:?subject=Header text;body=Nice news"
@@ -146,8 +189,9 @@ Just a snippet for sharing a page
 
 Link: http://stackoverflow.com/questions/5045918/adding-a-share-by-email-link-to-website
 
+----
 
-11. Javascript round up to nearest number
+33. Javascript round up to nearest number
 
 Here is how:
 
@@ -159,12 +203,9 @@ Example
 2 * Math.round(11 / 2); /* output 12 */
 
 
-12. Shortening line with CSS
+----
 
-http://codepen.io/siiron/pen/jfBhy/?editors=110
-
-
-13. CSS vertical align text - 23.06.2015
+32. CSS vertical align text - 23.06.2015
 
 There are different ways to vertical align text, for example with table.
 
@@ -189,8 +230,9 @@ vertical-align: middle;
 Inspiration links:
 http://stackoverflow.com/questions/9249359/is-it-possible-to-vertically-align-text-within-a-div
 
+----
 
-14. CSS + selector
+31. CSS + selector
 
 The + selector comes in handy sometimes.
 
@@ -198,15 +240,17 @@ The + selector comes in handy sometimes.
 
 It will selects all p's that are placed immediately after .class
 
+----
 
-15. Windows 7 Hostfile path
+30. Windows 7 Hostfile path
 
 C:\Windows\System32\drivers\etc 
 
 Remember to run Nodepad or another editor as Administrator to be able to edit, also change the .txt dropdown to All files.
 
+----
 
-16. Debugging/Freezing Bootstrap tooltips & popover
+29. Debugging/Freezing Bootstrap tooltips & popover
 It can be hard to style certain element because they disappear when you try to click on them.
 
 This is certainly the case with Bootstrap tooltips & popovers, when you try to inspect the element it will disappear.
@@ -221,8 +265,9 @@ $('[data-toggle="popover"]').popover('show');
 
 then through the developer tool navigate through the HTML to the popover element which in this case will not disappear.
 
+----
 
-17. Click not working on iPhone
+28. Click not working on iPhone
 
 I could not get a click event to fire on an iPhone, it worked on desktop.
 
@@ -230,22 +275,25 @@ Solution: click event needed to be an <a> tag, so I just changed the element to 
 
 Link: http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery
 
+----
 
-18. Styling width based on sibling count
+27. Styling width based on sibling count
 
 Here is a link to a good article on this subject.
 
 http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/
 
+----
 
-19. Responsive video
+26. Responsive video
 
 I used this link to solve my responsive vimeo video. 
 
 https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 
+----
 
-20. Aspect ratio
+25. Aspect ratio
 
 I needed to get the aspect ratio of an image, i new the
 
@@ -253,8 +301,9 @@ This link helped me with aspect ratio.
 
 http://math.stackexchange.com/questions/180804/how-to-get-the-aspect-ratio-of-an-image
 
+----
 
-21.Flexbox float left
+24.Flexbox float left
 
 Flexbox threats margin differently so to float left with flexbox write.
 
@@ -269,8 +318,9 @@ http://codepen.io/nickautomatic/pen/epYVaj
 
 http://stackoverflow.com/questions/22429003/right-aligning-flex-item
 
+----
 
-22. PhpStorm livetemplates not reacting on changes
+23. PhpStorm livetemplates not reacting on changes
 
 Remember to choose the right context to use the template.
 
@@ -278,8 +328,9 @@ Right click on the create template and choose change context, then choose the co
 
 In my case i only wanted the template to be availible in Javascript.
 
+----
 
-23. GIT command for removing ignore files 
+22. GIT command for removing ignore files 
 
 git rm -r --cached "path"
 
@@ -287,8 +338,9 @@ In my case
 
 git rm -r --cached public/css/
 
+----
 
-24. Location hash mobile not working
+21. Location hash mobile not working
 
 Safari can read window.location.hash, but if you need to change hash you need to use window.location.href (twice safari bug).
 
@@ -302,11 +354,301 @@ if ( $.browser.webkit == false ) {
 
 
 http://stackoverflow.com/questions/6970769/window-location-hash-location-hash-does-not-work-in-webkit-safari-chrome
+ 
+----
 
-25. 
+20. Ubuntu switch keyboard language
+In my Ubuntu 14.04 the text entry would not react or do anything, not sure why. It's a good thing we always can rely on the commandline, it's quite much faster as well.
+
+setxkbmap es
+or
+setxkbmap dk
+or
+setxkbmap fo
 
 
 
+To set it permanently you can do like this
+
+sudo nano /etc/default/keyboard
+
+This will appear:
+ 
+XKBMODEL="pc105"
+XKBLAYOUT="us"
+XKBVARIANT=""
+XKBOPTIONS=""
+
+Then change XKBLAYOUT="**" to the prefered language in my case
+XKBLAYOUT="dk"
+
+----
+
+19. Startcd PhpStorm-133.982/bin
+
+./phpstorm.sh PHPstorm cli Ubuntu
+I had problems starting PHPstorm as Ubuntu newbie, but figured it out by cd'ing to the bin directory in the PHP installation and starting the program by using ./ then a launch icon will be added to the desktop launch bar. Now you just right click the the PHPstorm icon a press "lock to launcher"
+
+cd PhpStorm-133.982/bin
+
+./phpstorm.sh 
+
+if you want to start it from home, then:
+
+./PhpStorm-133.982/bin/phpstorm.sh
+
+and to make an alias type this in the terminal;
+
+sudo nano ~/.bashrc
+
+Then usually i go to the bottom the file and write something like this:
+
+#CUSTOM ALIASES - JOHN
+alias storm='./PhpStorm-139.1348/bin/phpstorm.sh'
+alias phpstorm='./PhpStorm-139.1348/bin/phpstorm.sh'
+
+Then save with:
+CTRL+O (then press enter)
+CTRL+X (to exit the document)
+
+Then you need to reopen the terminal or just open a new terminal to get it working.
+
+----
+
+18. Gulp - gem undefined not install
+
+I got this error while starting on a project.
+
+gem undefined not install
+
+The problem was I had not installed ruby and sass on my machine.
+
+----
+
+17. Range slider
+Here is a nice slider for bootstrap.
+
+http://www.eyecon.ro/bootstrap-slider/
+
+----
+
+16. Bower update error 
+After updating bower i got command not found when trying to use bower. Also got some /usr/bin/bower/ no directory.
+
+What seemed to work was installing bower again.
+sudo npm install bower -g
+
+----
+
+15. io.js - npm not working
+For some kind of reason i could not get npm to work when installing io.js on Ubuntu 14.04
+
+I tried to re-install io.js and installing Node.js nothing seemed to work.
+
+The solution at the end was simple just install npm.
+
+sudo apt-get install npm, and then everything was working fine.
+
+----
+
+14. Updating Node.js
+
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
+Link: http://davidwalsh.name/upgrade-nodejs
+
+----
+
+13. Start node program without using the node command
+This works for Ubuntu and other unix like systems.
+Create a javascript file called something.js
+
+Insert this code:
+#!/usr/bin/node --harmony
+console.log("hello world");
+
+Then go to terminal and cd to the file directory and write:
+./something.js
+
+The output should be "hello world"
+
+----
+
+12. Specific smaller screen in Ubuntu shortcut
+
+You need a number pad for this to work.
+
+If you want to for example minize into the left top corner, you can pressing.
+
+CTRL + ALT + 9 (this only works with the number on the number pad)
+
+If you want a half screen left press
+
+CTRL + ALT + 6
+
+----
+
+11. Close telnet connection in terminal
+
+As i was Playing with Node and TCP i did not know how to disconnect
+from a connection in the terminal. With a little google help i figured out it was kind of easy.
+
+Press:
+CTRL + ] (I have a danish keyboard so in my case it is CTRL + Alt Gr + 9)
+then you should see something like this "telnet>" and then type
+quit
+
+Now the connection should be gone.
+
+----
+
+10. Change Shopify Checkout style
+
+I was helping a friend with his Shopify page where I had the problem of not being able to change the style of the checkout page.
+
+The page would not react to any styling I tried to add to neither style.css or checkout.css.
+
+Then stumbled on this forum on shopify which lead me to the answer.
+
+Create a new stylesheet and name it checkout.scss.liquid.
+
+And add the changes in there worked very well for me.
+
+
+Link: https://ecommerce.shopify.com/c/ecommerce-design/t/hide-parts-of-the-check-out-page-265487
+
+----
+
+9. 500 error in Laravel 5 form
+
+When you are using Laravel 5, the form helper is not there by default.
+
+And when you are trying to send a post request you get a 500 error because you need the CSRF token so your form need to look like this:
+
+<form class="form" data-remote action="/search" accept-charset="UTF-8">
+  <input name="_token" type="hidden" value="{!! csrf_token() !!}">
+  <!-- then the rest of the form input fields -->	
+</form>                
+
+Link: http://tutsnare.com/post-data-using-ajax-in-laravel-5/
+
+----
+
+8. Changing Hosts file Ubuntu
+If you want to change host file in Ubuntu, you can open the terminal and do the following.
+
+To get to the root press.
+$ cd / 
+$ cd etc
+$ sudo nano hosts
+
+Then just change the file as you want, and press O then enter and then X.
+
+----
+
+7. Cut(limit string length) string in PHP
+As I am usually using blade and other framworks the vanilla PHP templating is not always so sharp.
+Here are two functions to cut string.
+
+echo mb_strimwidth("Hello World", 0, 10, "...");
+or 
+$string = substr($string,0,10).'...';
+
+----
+
+6. Accessing illegal name properties from PHP Objects
+
+I quite a long time to figure this one out.
+
+I had a json decoded object where the object keys had some illegal characters "this-is-the-illegal-string".
+
+This mean that the usual way will not work.
+
+$array = ['hello' => 'John', 'hello-world' => 'John'];
+$objext = (object)$array;
+echo $object->['hello-world']; // This does not work
+
+The solution is to use curly braces
+echo $object->{'hello-world'}; // This works
+
+----
+
+5. Express params
+
+I just started using Express and had some problems on how to use params to display pages "blog" pages.
+
+app.get('/notes/:note', function(req, res){
+
+    var notes = require(__dirname + '/pages/content/notes.json');
+
+    res.render(__dirname + '/pages/note', { note: note. [req.params.note]});	
+
+});
+
+You will notice that I use the :note after the path /notes/:note
+
+This will catch the unknown params that are added to the path.
+
+You can use this string/value with req.param.note
+
+Note can ofcourse be what ever you want forexample :bla
+then you would use req.param.bla to get the value.
+
+----
+
+4. Relative CSS link
+
+I typical mistake is to make CSS links relative by not using / at the start of the link.
+
+    <link href='css/main.css' rel='stylesheet' type='text/css'>
+
+it should instead be
+
+    <link href='/css/main.css' rel='stylesheet' type='text/css'>
+
+
+Write more about this..........
+
+----
+
+3. Wordpress WYSIWYG not showing
+
+The WP WYSIWYG just disappeared out of no where for me.
+
+My fix was to go to Users -> Profile (f.eks. Admin)
+
+Check the Visual Editor checkbox
+
+then save and 
+
+then uncheck checkbox and save
+
+
+This worked for me
+
+----
+
+2. Element disappeared on float
+
+First problem was that i had set ul to float left, and when i figured out to set li to float it still disappeared.
+
+The solution was found in Stackoverflow, which was to set ul to overflow: hidden;
+
+http://stackoverflow.com/questions/19775657/div-background-hide-when-i-use-float-left-on-li-menu
+
+----
+
+1. WP child page menu
+
+Here is a great video about how to create a child page menu.
+
+I did not use the array_reverse function.
+
+https://www.youtube.com/watch?v=GHTZn3atTcM
+
+----
 
 ICONS:
 http://www.flaticon.com/
@@ -334,3 +676,14 @@ http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
 My CSS Lookups:
 http://www.sitepoint.com/web-foundations/nth-typen-css-selector/
 http://www.sitepoint.com/web-foundations/understanding-nth-child-pseudo-class-expressions/
+
+
+Tutorial sites:
+https://sub.watchmecode.net/ - JavaScript & Node.js
+https://lynda.com
+http://teamthreehouse.com
+http://pluralsight.com
+http://codeschool.com
+http://udacity.com
+http://coursera.com
+http://udemy.com
