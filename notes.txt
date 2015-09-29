@@ -301,9 +301,10 @@ if ( $.browser.webkit == false ) {
         }
 
 
+http://stackoverflow.com/questions/6970769/window-location-hash-location-hash-does-not-work-in-webkit-safari-chrome
+
 25. 
 
-http://stackoverflow.com/questions/6970769/window-location-hash-location-hash-does-not-work-in-webkit-safari-chrome
 
 
 
