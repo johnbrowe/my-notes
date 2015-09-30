@@ -7,6 +7,15 @@ git commit
 git pull
 git push
 
+//Remove cached files, which you want to ignore
+git rm -r --cached "path"
+
+in my case I do
+
+git rm -r --cached public/css/
+git rm -r --cached public/js/
+git rm -r --cached public/build/
+
 ----
 
 45. Disable/turn off autosave on PHPStorm
