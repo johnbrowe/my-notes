@@ -1,5 +1,13 @@
 ----
 
+47. My computers IP Windows
+
+Here is a link:
+
+http://windows.microsoft.com/da-dk/windows/find-computers-ip-address#1TC=windows-7 (Danish)
+
+----
+
 46. A git to remember
 
 git add -A 
