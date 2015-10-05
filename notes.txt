@@ -1,10 +1,29 @@
 ----
 
+48. Click Safari Mobile
+
+I click on Safari mobile was not working for me, worked every where else. Solution was to add an empty onclick="" to the menu item.
+
+<div class="menu_item" onclick=""></div>
+
+Link: http://stackoverflow.com/questions/7892863/jquery-click-not-working-with-ipad
+
+----
+
 47. My computers IP Windows
 
 Here is a link:
 
 http://windows.microsoft.com/da-dk/windows/find-computers-ip-address#1TC=windows-7 (Danish)
+
+Click Start
+Click Kontrolpanel
+Skriv adapter i search
+Click Vis netværksforbindelser.
+
+Click aktiv netværksforbindelse
+Click Vis status for denne forbindelse på værktøjslinjen
+Click detaljer
 
 ----
 
