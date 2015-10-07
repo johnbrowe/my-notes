@@ -1,8 +1,193 @@
 ----
 
+58. Bash commands
+
+create directory:
+mkdir foldername
+
+remove folder:
+rm -r foldername
+
+create file:
+touch filename
+
+show current directory list:
+ls
+
+show current directory list with hidden files:
+ls -a
+
+show current directory:
+pwd
+
+
+----
+
+57. Enviroment Variables in Node
+
+Here is a fine tut on enviroment variables in Node:
+
+https://sendgrid.com/blog/node-environment-variables/
+
+----
+
+56. SSH - Host key verification failed.
+
+I had just started a new droplet on Digitalocean with an SSH key, but I could not ssh. I keept getting this error.
+
+- Host key verification failed.
+
+This can often be caused of ssh know host, and often I just delete it.
+
+But in this case the problem was more embarrising.
+
+When the question - Are you sure you want to continue connecting (yes/no)? was set I just pressed ENTER.
+
+This is not enough you must type:
+
+yes (enter)
+
+
+----
+
+55. Check jQuery is loaded
+
+window.onload = function() {
+    if (window.jQuery) {
+        // jQuery is loaded  
+        alert("Yes, jQuery is here!");
+    } else {
+        // jQuery is not loaded
+        alert("Not loaded");
+    }
+}
+
+---- 
+
+54. Express Generator commands
+
+Start project:
+npm install -g express
+npm install -g express-generator
+npm install
+
+To start app:
+npm start
+
+http://127.0.0.0:3000
+
+
+Link: https://www.airpair.com/javascript/complete-expressjs-nodejs-mongodb-crud-skeleton
+
+----
+
+53. Express starter
+
+npm init
+
+npm install express -save
+
+Here is my usual hello world snippet:
+
+var express = require('express');
+var app = express();
+
+homepage
+app.get('/', function(req, res) {
+    res.send('hello world');
+});
+
+
+app.listen(5000);
+console.log("App running on localhost:5000");
+
+----
+
+52. PhpStorm update directory
+
+To keep PhpStorm directory in sync right click on directory root and click on syncronize "folder name".
+
+----
+
+51. Show hidden files
+
+Start FileZilla, and then select the Server menu.
+Select Force Showing Hidden Files.
+
+----
+
+50. Wordpress Migration Plugins
+
+I mainly use this plugin, if I do not have a CPanel or MySQL GUI.
+
+Duplicator
+
+https://wordpress.org/plugins/duplicator/
+
+
+
+----
+
+49. Could not ssh into server
+
+I had forgotten all my credentials to remote server, which I really wanted to log in to. It was a digitalocean server so I could just login to my account and reset the password.
+
+After this I tried to ssh in to the server in any possible way, but I just could not. 
+
+When I wrote ssh root@ip_address
+
+I got "permission denied".
+
+So I figured out problem which was that I tried to ssh in with root and by default login in with root is not permitted. 
+
+To test if this was the case I accessed to web console droplet and wrote:
+nano /etc/ssh/sshd_config
+
+So in this file I changed "PermitRootLogin no" to "PermitRootLogin yes" and then: 
+
+sudo service ssh restart
+
+After this I had not problem loggin in. 
+
+My guess is that there is a reason why root is not permitted login by default, so I changed it back "PermitRootLogin no" and figured out how to create another user. 
+
+Link: http://askubuntu.com/questions/497895/permission-denied-for-rootlocalhost-for-ssh-connection
+
+----
+
+48. Convert array to object with Underscore
+
+var _ = require('underscore');
+
+var a = [ 'a', 'b', 'c' ];
+var obj = _.extend({}, a);
+console.log(obj);
+// prints { '0': 'a', '1': 'b', '2': 'c' }
+
+Link: http://stackoverflow.com/questions/4215737/convert-array-to-object
+
+----
+
+47. JavaScript Remove empty string from array
+
+arr = arr.filter(Boolean)
+
+http://stackoverflow.com/questions/19888689/remove-empty-strings-from-array-while-keeping-record-without-loop
+
+----
+
 46. A git to remember
 
-git add -A 
+git add -A
+// to add all repo 
+git add .
+// Undo add
+git reset .
+// Remove cached 
+git rm -r --cached directory-name
+// Remove all files which are in gitignore
+git rm --cached `git ls-files -i --exclude-from=.gitignore` 
+// Commit all
 git commit
 git pull
 git push
