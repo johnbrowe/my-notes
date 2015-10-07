@@ -176,6 +176,33 @@ http://stackoverflow.com/questions/19888689/remove-empty-strings-from-array-whil
 
 ----
 
+48. Click Safari Mobile
+
+I click on Safari mobile was not working for me, worked every where else. Solution was to add an empty onclick="" to the menu item.
+
+<div class="menu_item" onclick=""></div>
+
+Link: http://stackoverflow.com/questions/7892863/jquery-click-not-working-with-ipad
+
+----
+
+47. My computers IP Windows
+
+Here is a link:
+
+http://windows.microsoft.com/da-dk/windows/find-computers-ip-address#1TC=windows-7 (Danish)
+
+Click Start
+Click Kontrolpanel
+Skriv adapter i search
+Click Vis netv�rksforbindelser.
+
+Click aktiv netv�rksforbindelse
+Click Vis status for denne forbindelse p� v�rkt�jslinjen
+Click detaljer
+
+----
+
 46. A git to remember
 
 git add -A
@@ -191,6 +218,15 @@ git rm --cached `git ls-files -i --exclude-from=.gitignore`
 git commit
 git pull
 git push
+
+//Remove cached files, which you want to ignore
+git rm -r --cached "path"
+
+in my case I do
+
+git rm -r --cached public/css/
+git rm -r --cached public/js/
+git rm -r --cached public/build/
 
 ----
 
