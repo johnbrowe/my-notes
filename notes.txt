@@ -1,3 +1,41 @@
+﻿----
+
+60. Wordpress Migration Plugins
+
+I mainly use this plugin, if I do not have a CPanel or MySQL GUI.
+
+Duplicator
+
+https://wordpress.org/plugins/duplicator/
+
+
+----
+
+59. Could not ssh into server
+
+I had forgotten all my credentials to remote server, which I really wanted to log in to. It was a digitalocean server so I could just login to my account and reset the password.
+
+After this I tried to ssh in to the server in any possible way, but I just could not. 
+
+When I wrote ssh root@ip_address
+
+I got "permission denied".
+
+So I figured out problem which was that I tried to ssh in with root and by default login in with root is not permitted. 
+
+To test if this was the case I accessed to web console droplet and wrote:
+nano /etc/ssh/sshd_config
+
+So in this file I changed "PermitRootLogin no" to "PermitRootLogin yes" and then: 
+
+sudo service ssh restart
+
+After this I had not problem loggin in. 
+
+My guess is that there is a reason why root is not permitted login by default, so I changed it back "PermitRootLogin no" and figured out how to create another user. 
+
+Link: http://askubuntu.com/questions/497895/permission-denied-for-rootlocalhost-for-ssh-connection
+
 ----
 
 58. Bash commands
@@ -20,6 +58,10 @@ ls -a
 show current directory:
 pwd
 
+
+Here are some nice ones as well: 
+
+https://www.quora.com/What-are-some-of-the-best-command-prompt-or-terminal-tricks
 
 ----
 
@@ -116,46 +158,7 @@ Select Force Showing Hidden Files.
 
 ----
 
-50. Wordpress Migration Plugins
-
-I mainly use this plugin, if I do not have a CPanel or MySQL GUI.
-
-Duplicator
-
-https://wordpress.org/plugins/duplicator/
-
-
-
-----
-
-49. Could not ssh into server
-
-I had forgotten all my credentials to remote server, which I really wanted to log in to. It was a digitalocean server so I could just login to my account and reset the password.
-
-After this I tried to ssh in to the server in any possible way, but I just could not. 
-
-When I wrote ssh root@ip_address
-
-I got "permission denied".
-
-So I figured out problem which was that I tried to ssh in with root and by default login in with root is not permitted. 
-
-To test if this was the case I accessed to web console droplet and wrote:
-nano /etc/ssh/sshd_config
-
-So in this file I changed "PermitRootLogin no" to "PermitRootLogin yes" and then: 
-
-sudo service ssh restart
-
-After this I had not problem loggin in. 
-
-My guess is that there is a reason why root is not permitted login by default, so I changed it back "PermitRootLogin no" and figured out how to create another user. 
-
-Link: http://askubuntu.com/questions/497895/permission-denied-for-rootlocalhost-for-ssh-connection
-
-----
-
-48. Convert array to object with Underscore
+50. Convert array to object with Underscore
 
 var _ = require('underscore');
 
@@ -168,7 +171,7 @@ Link: http://stackoverflow.com/questions/4215737/convert-array-to-object
 
 ----
 
-47. JavaScript Remove empty string from array
+49. JavaScript Remove empty string from array
 
 arr = arr.filter(Boolean)
 
