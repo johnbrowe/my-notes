@@ -1,5 +1,43 @@
 ﻿----
 
+63. Quickly get css prefixes
+
+New pen on Code Pen
+Add CSS
+Add autoprefixer on CSS settings
+View compiled
+
+Copye autoprefixed code and paste where ever you need it.
+
+----
+
+62. Xdebug and Homestead
+
+XDebug is fantastic but it is hard to get working.
+
+Just a note last time my problem was absolute path.
+
+I had set the right path to the public folder, my problem was I also needed the absolute path to the root folder.
+
+C:sites/mysite => /home/vagrant/mysite
+public => /home/vagrant/mysite/public 			
+
+
+Here is a good link:
+https://laracasts.com/forum/?p=1648-phpstorm-homestead-xdebug/0
+
+
+----
+
+61. CSS checkbox
+
+Nice checkbox styling:
+
+Link: http://codepen.io/bbodine1/pen/novBm?editors=110
+
+
+----
+
 60. Wordpress Migration Plugins
 
 I mainly use this plugin, if I do not have a CPanel or MySQL GUI.
@@ -13,7 +51,7 @@ https://wordpress.org/plugins/duplicator/
 
 59. Could not ssh into server
 
-I had forgotten all my credentials to remote server, which I really wanted to log in to. It was a digitalocean server so I could just login to my account and reset the password.
+I had forgotten all my credentials to a remote server, which I really wanted to log in to. It was a digitalocean server so I could just login to my account and reset the password.
 
 After this I tried to ssh in to the server in any possible way, but I just could not. 
 
