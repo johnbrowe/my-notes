@@ -1,5 +1,78 @@
 ----
 
+62. Wordpress removing subfolder from URL
+
+I used this link: 
+
+http://www.wpbeginner.com/wp-tutorials/how-to-get-rid-of-wordpress-from-your-wordpress-site-url/
+
+----
+
+61. Installing New Relic Node
+
+Here is a good video:
+
+https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/installing-maintaining-nodejs
+
+----
+
+60. Node forever
+
+npm install forver -g
+
+
+cd to you project and then:
+
+forever start index.js
+
+to stop forever just type:
+
+forever stop index.js
+
+----
+
+59. Kill Node process
+
+Usually when you want to quit a node server you press CTRL + C or CTRL + Z.
+
+But if you want to stop the Node server where you have killed of the terminal that you used to start Node.
+
+You get this error if you try to start node again:
+
+Error: listen EADDRINUSE :::3000
+    at Object.exports._errnoException (util.js:837:11)
+    at exports._exceptionWithHostPort (util.js:860:20)
+    at Server._listen2 (net.js:1231:14)
+    at listen (net.js:1267:10)
+    at Server.listen (net.js:1363:5)
+    at EventEmitter.listen (/root/my-site/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/root/my-site/index.js:33:5)
+    at Module._compile (module.js:434:26)
+    at Object.Module._extensions..js (module.js:452:10)
+    at Module.load (module.js:355:32)
+
+You can fix this with:
+
+Write:
+ps aux | grep node
+
+Find the process ID, which second from the left (in my case 4 digits) it should look something like this:
+
+root      xxxx  0.0  xx xxxxxx xxxxx pts/0    Sl+  09:18   0:00 node index.js
+root      xxxx  0.0  xx  xxxxx   xxx pts/4    S+   09:41   0:00 grep --color=au
+
+Then write:
+kill -9 PROCESS_ID
+
+For example:
+kill -9 4485
+
+
+and then you are good to go.
+ 
+
+----
+
 58. Bash commands
 
 create directory:
@@ -19,6 +92,9 @@ ls -a
 
 show current directory:
 pwd
+
+Copy file to current directory
+cp path/filename .
 
 
 ----
