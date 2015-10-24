@@ -1,6 +1,6 @@
 ﻿----
 
-60. Wordpress Migration Plugins
+64. Wordpress Migration Plugins
 
 I mainly use this plugin, if I do not have a CPanel or MySQL GUI.
 
@@ -11,7 +11,7 @@ https://wordpress.org/plugins/duplicator/
 
 ----
 
-59. Could not ssh into server
+63. Could not ssh into server
 
 I had forgotten all my credentials to remote server, which I really wanted to log in to. It was a digitalocean server so I could just login to my account and reset the password.
 
