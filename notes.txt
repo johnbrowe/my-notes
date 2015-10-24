@@ -1,3 +1,55 @@
+----
+
+65. Reset SSD Ubuntu 15.04
+
+cd /dev/
+sudo hdparm -I sda
+
+Then it will show some text, we are interested in this part, specically the part that says frozen:
+
+"
+Security: 
+	Master password revision code = 65534
+		supported
+	not	enabled (this should be enabled)
+	not	locked
+		frozen  (this should be not frozen)
+	not	expired: security count
+		supported: enhanced erase
+	4min for SECURITY ERASE UNIT. 2min for ENHANCED SECURITY ERASE UNIT. 
+"
+
+We want it to say not frozen and enabled
+
+To do this write:
+systemctl suspend
+
+The system will suspend and then start up again, when it does write "sudo hdparm -I sda" again. 
+
+Now it will say:
+not	frozen
+
+Now type to change enabled to not enabled:
+sudo hdparm --user-master u --security-set-pass A-pass-word sda
+
+Then the cli will display:
+security_password="A-pass-word"
+
+If you type sudo "hdparm -I sda" it should say: 
+
+enabled (instead of not    enabled)
+
+
+Final step, which will wipe the SSD which mean everything on the SSD will be lost, so backup if have something on that want.
+
+Now type:
+hdparm --user-master u --security-erase A-pass-word sda
+
+Links: 
+https://www.youtube.com/watch?v=bMir8LOXX6U
+https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase
+
+
 ﻿----
 
 64. Wordpress Migration Plugins
