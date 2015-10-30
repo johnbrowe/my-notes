@@ -1,75 +1,58 @@
-﻿
 ----
 
-65. Vue.js show data 
+65. Reset SSD Ubuntu 15.04
 
-Here is nice snippet for seeing which data you are working with.
+cd /dev/
+sudo hdparm -I sda
 
-<pre>@{{ $data | json }}</pre>
+Then it will show some text, we are interested in this part, specically the part that says frozen:
 
-----
+"
+Security: 
+	Master password revision code = 65534
+		supported
+	not	enabled (this should be enabled)
+	not	locked
+		frozen  (this should be not frozen)
+	not	expired: security count
+		supported: enhanced erase
+	4min for SECURITY ERASE UNIT. 2min for ENHANCED SECURITY ERASE UNIT. 
+"
 
-64. ES6 features I really like
+We want it to say not frozen and enabled
 
-Variables:
-Let
-Const
+To do this write:
+systemctl suspend
 
-Arrow Functions
+The system will suspend and then start up again, when it does write "sudo hdparm -I sda" again. 
 
+Now it will say:
+not	frozen
 
-String methods:
-'hello world'.startsWith('hello'); //true
-'hello world'.endsWith('hello'); // false
-'hello world'.includes('hel'); // true
-'hello '.repeat(3); // 'hello hello hello '
+Now type to change enabled to not enabled:
+sudo hdparm --user-master u --security-set-pass A-pass-word sda
 
+Then the cli will display:
+security_password="A-pass-word"
 
-let name = 'Simon';
-console.log(`Hello ${name}.`);
+If you type sudo "hdparm -I sda" it should say: 
 
-
-----
-
-63. Quickly get css prefixes
-
-New pen on Code Pen
-Add CSS
-Add autoprefixer on CSS settings
-View compiled
-
-Copye autoprefixed code and paste where ever you need it.
-
-----
-
-62. Xdebug and Homestead
-
-XDebug is fantastic but it is hard to get working.
-
-Just a note last time my problem was absolute path.
-
-I had set the right path to the public folder, my problem was I also needed the absolute path to the root folder.
-
-C:sites/mysite => /home/vagrant/mysite
-public => /home/vagrant/mysite/public 			
+enabled (instead of not    enabled)
 
 
-Here is a good link:
-https://laracasts.com/forum/?p=1648-phpstorm-homestead-xdebug/0
+Final step, which will wipe the SSD which mean everything on the SSD will be lost, so backup if have something on that want.
+
+Now type:
+hdparm --user-master u --security-erase A-pass-word sda
+
+Links: 
+https://www.youtube.com/watch?v=bMir8LOXX6U
+https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase
 
 
-----
+﻿----
 
-61. CSS checkbox
-
-Nice checkbox styling:
-
-Link: http://codepen.io/bbodine1/pen/novBm?editors=110
-
-
-----
-
-60. Wordpress Migration Plugins
+64. Wordpress Migration Plugins
 
 I mainly use this plugin, if I do not have a CPanel or MySQL GUI.
 
@@ -80,7 +63,7 @@ https://wordpress.org/plugins/duplicator/
 
 ----
 
-59. Could not ssh into server
+63. Could not ssh into server
 
 I had forgotten all my credentials to a remote server, which I really wanted to log in to. It was a digitalocean server so I could just login to my account and reset the password.
 
@@ -107,6 +90,79 @@ Link: http://askubuntu.com/questions/497895/permission-denied-for-rootlocalhost-
 
 ----
 
+62. Wordpress removing subfolder from URL
+
+I used this link: 
+
+http://www.wpbeginner.com/wp-tutorials/how-to-get-rid-of-wordpress-from-your-wordpress-site-url/
+
+----
+
+61. Installing New Relic Node
+
+Here is a good video:
+
+https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/installing-maintaining-nodejs
+
+----
+
+60. Node forever
+
+npm install forver -g
+
+
+cd to you project and then:
+
+forever start index.js
+
+to stop forever just type:
+
+forever stop index.js
+
+----
+
+59. Kill Node process
+
+Usually when you want to quit a node server you press CTRL + C or CTRL + Z.
+
+But if you want to stop the Node server where you have killed of the terminal that you used to start Node.
+
+You get this error if you try to start node again:
+
+Error: listen EADDRINUSE :::3000
+    at Object.exports._errnoException (util.js:837:11)
+    at exports._exceptionWithHostPort (util.js:860:20)
+    at Server._listen2 (net.js:1231:14)
+    at listen (net.js:1267:10)
+    at Server.listen (net.js:1363:5)
+    at EventEmitter.listen (/root/my-site/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/root/my-site/index.js:33:5)
+    at Module._compile (module.js:434:26)
+    at Object.Module._extensions..js (module.js:452:10)
+    at Module.load (module.js:355:32)
+
+You can fix this with:
+
+Write:
+ps aux | grep node
+
+Find the process ID, which second from the left (in my case 4 digits) it should look something like this:
+
+root      xxxx  0.0  xx xxxxxx xxxxx pts/0    Sl+  09:18   0:00 node index.js
+root      xxxx  0.0  xx  xxxxx   xxx pts/4    S+   09:41   0:00 grep --color=au
+
+Then write:
+kill -9 PROCESS_ID
+
+For example:
+kill -9 4485
+
+
+and then you are good to go.
+ 
+
+----
+
 58. Bash commands
 
 create directory:
@@ -126,6 +182,9 @@ ls -a
 
 show current directory:
 pwd
+
+Copy file to current directory
+cp path/filename .
 
 
 Here are some nice ones as well: 
