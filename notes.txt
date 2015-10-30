@@ -1,5 +1,73 @@
 ----
 
+70. Vue.js show data
+
+Here is nice snippet for seeing which data you are working with.
+
+<pre>@{{ $data | json }}</pre>
+
+----
+
+69. ES6 features I really like
+
+Variables:
+Let
+Const
+
+Arrow Functions
+
+
+String methods:
+'hello world'.startsWith('hello'); //true
+'hello world'.endsWith('hello'); // false
+'hello world'.includes('hel'); // true
+'hello '.repeat(3); // 'hello hello hello '
+
+
+let name = 'Simon';
+console.log(`Hello ${name}.`);
+
+
+----
+
+68. Quickly get css prefixes
+
+New pen on Code Pen
+Add CSS
+Add autoprefixer on CSS settings
+View compiled
+
+Copye autoprefixed code and paste where ever you need it.
+
+----
+
+67. Xdebug and Homestead
+
+XDebug is fantastic but it is hard to get working.
+
+Just a note last time my problem was absolute path.
+
+I had set the right path to the public folder, my problem was I also needed the absolute path to the root folder.
+
+C:sites/mysite => /home/vagrant/mysite
+public => /home/vagrant/mysite/public
+
+
+Here is a good link:
+https://laracasts.com/forum/?p=1648-phpstorm-homestead-xdebug/0
+
+
+----
+
+66. CSS checkbox
+
+Nice checkbox styling:
+
+Link: http://codepen.io/bbodine1/pen/novBm?editors=110
+
+
+----
+
 65. Reset SSD Ubuntu 15.04
 
 cd /dev/
