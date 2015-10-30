@@ -1,4 +1,35 @@
-﻿----
+﻿
+----
+
+65. Vue.js show data 
+
+Here is nice snippet for seeing which data you are working with.
+
+<pre>@{{ $data | json }}</pre>
+
+----
+
+64. ES6 features I really like
+
+Variables:
+Let
+Const
+
+Arrow Functions
+
+
+String methods:
+'hello world'.startsWith('hello'); //true
+'hello world'.endsWith('hello'); // false
+'hello world'.includes('hel'); // true
+'hello '.repeat(3); // 'hello hello hello '
+
+
+let name = 'Simon';
+console.log(`Hello ${name}.`);
+
+
+----
 
 63. Quickly get css prefixes
 
@@ -247,14 +278,19 @@ Click detaljer
 46. A git to remember
 
 git add -A
+
 // to add all repo 
 git add .
+
 // Undo add
 git reset .
+
 // Remove cached 
 git rm -r --cached directory-name
+
 // Remove all files which are in gitignore
 git rm --cached `git ls-files -i --exclude-from=.gitignore` 
+
 // Commit all
 git commit
 git pull
