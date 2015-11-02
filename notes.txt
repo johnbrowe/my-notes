@@ -1,3 +1,52 @@
+﻿----
+
+72. Vue.js passing args to the event function
+
+HTML should look like this:
+<ul id="demo">
+  <li v-for="item in items" class="item-{{$index}}" v-on:click.stop.prevent="onClick(item)">
+    {{ $index }} - {{ parentMsg }} {{ item.childMsg }}
+  </li>
+</ul>
+
+Javascript should look like this: 
+var demo = new Vue({
+  el: '#demo',
+  data: {
+    parentMsg: 'Hello',
+    items: [
+      { childMsg: 'Foo' },
+      { childMsg: 'Bar' },
+      { childMsg: 'bla' },
+      { childMsg: 'sma' }
+    ]
+  },
+   methods: {
+    onClick: function (obj) {
+      console.log(obj.childMsg);
+    }
+  }
+})
+
+
+As you can see we pass the argument "onclick(item)" which is the same as the v-for item.
+
+----
+
+71. MySQL workbench alternative
+
+I've been using MySQL workenbench on Windows for a couple of years and it has always suited my needs, 
+but lately it has crashed more than my patience could handle. It mainly could not handle large tables.
+
+
+So I tried out a couple of DB gui's for example Heidi SQL and Navicat.
+
+I had problems with getting Heidi SQL to ssh in into Homestead (my Laravel envirment) so I could not use it.  
+
+Navicat worked perfectly but it's very expensive.
+
+Then I tried SQLWave and for my simple needs it works perfectly, there is nothing it can't handle in my enviroment and it's very easy to work with.
+
 ----
 
 70. Vue.js show data
