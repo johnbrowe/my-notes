@@ -1,5 +1,15 @@
 ﻿----
 
+75. Get index of element in JavaScript
+
+Get index of element in relation to it's siblings:
+
+function indexOfNode (node) {
+   return [].indexOf.call(node.parentNode.children, node.target)
+}
+
+----
+
 74. Stop program from starting on open Windows 7
 
 Windows start
