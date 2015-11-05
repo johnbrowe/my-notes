@@ -1,5 +1,11 @@
 ﻿----
 
+76. Accordion pure CSS (SASS)
+
+http://codepen.io/mjtweaver/pen/bVxrEW
+
+----
+
 75. Get index of element in JavaScript
 
 Get index of element in relation to it's siblings:
