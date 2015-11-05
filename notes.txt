@@ -1,5 +1,40 @@
 ﻿----
 
+74. Stop program from starting on open Windows 7
+
+Windows start
+
+Search and click msconfig
+
+Click startup tab
+
+Uncheck unwanted startup program
+
+----
+
+73. Find object property in Array
+
+Im falling in love with underscore.
+
+I needed to get the index of a name in a object in an array.
+
+And underscore a has many options. I used this:
+
+var users = [{'id': 1, 'name': 'Bob', 'last': 'Brown'},
+             {'id': 2, 'name': 'Ted', 'last': 'White'},
+             {'id': 3, 'name': 'Frank', 'last': 'James'},
+             {'id': 4, 'name': 'Ted', 'last': 'Jones'}];
+
+_.findLastIndex(users, {
+  name: 'Ted'
+});
+
+// 3
+
+Link: http://underscorejs.org/#indexOf
+
+----
+
 72. Vue.js passing args to the event function
 
 HTML should look like this:
