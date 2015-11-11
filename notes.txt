@@ -1,5 +1,25 @@
 ﻿----
 
+78. Button should not submit
+
+I guess by default button type is "submit", so if you want button not to submit form.
+
+<button type="button"></button> // This will not submit
+
+----
+
+77. PHPStorm file encoding
+
+For some reason PHPStorm keept encoding some windows encoding which was kind of annoying.
+
+To get rid of this problem just go to settings -> Editor -> File Encodings Her you can change Ide Encodings, Project Encodings, Default encodings for properties files to UTF-8.
+
+If you want this to be default on all projects do the same thing on "Default Settings".
+
+
+
+----
+
 76. Accordion pure CSS (SASS)
 
 http://codepen.io/mjtweaver/pen/bVxrEW
