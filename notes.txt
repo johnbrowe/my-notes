@@ -1,5 +1,13 @@
 ﻿----
 
+88. Animated Counter
+
+Here is the snippet:
+
+http://codepen.io/johnbrowe/pen/addmmZ
+
+----
+
 87. JS Functional libraries
 
 Libs I need to digg into:
