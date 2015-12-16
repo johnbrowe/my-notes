@@ -1,5 +1,14 @@
 ﻿----
 
+89. JavaScript Design Patterns
+
+Here is a good article on the "most" important design patterns in JavaScript:
+
+https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
+
+
+----
+
 88. Animated Counter
 
 Here is the snippet:
