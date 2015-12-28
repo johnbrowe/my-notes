@@ -1,4 +1,135 @@
-﻿----
+----
+
+85. Vue.js unescape delimiters text trick
+
+Usually it’s done like this:
+
+{{{ data.goes.here }}}
+
+If you for some reason are not able to use the standard escape delimiters in Vue.
+
+You can create your own as I have done here.
+
+Vue.config.unsafeDelimiters = ['{{!', '!}}'];
+
+new Vue({ … })
+
+
+----
+
+84. Mac shortcuts
+
+Force to quit program:
+ALT+CMD+ESC
+
+----
+
+83. Wrong font in PDF app
+
+As I was working on a PDF app the font thin/100 was behaving wrong, and was being to bold in relation to what I was expecting.
+
+I tried a lot of different ways for improving the rendering of wkhtmltopdf dependency which was rendering my PDF’s.
+
+After hours I wound out that the problem was the font file. The font that I had downloaded should be thin, but was actually regular. So I found a better version of the font which was actually 100/thin and then I worked as it was supposed to.
+
+
+----
+
+82. SSH without vagrant ssh in Homestead
+
+I was just curious how to login in to the vagrant homestead box without vagrant ssh.
+
+This is how I logged in:
+ssh vagrant@127.0.0.1 -p 2222
+
+Key phrase is what ever you added to you public key.
+Many times people leave it empty, though I never do this.
+
+----
+
+81. Local font for wkhtmltopdf in Homestead box
+
+I needed to use local fonts on my Laravel PDF app.
+
+For the css to the local fonts you need to create a dir in homestead.
+
+1. cd ~
+2. sudo mkdir .fonts
+3. add fonts here
+
+I used font squirrel to convert fonts to the right format.
+I just formatted to all formats so I was sure to hit the right one.  
+
+----
+
+80. Copy files to Homestead via SSH
+
+For some kind of reason I was not able to use sftp to login to my Homestead.
+
+I needed to upload some files locally to get my environment to behave as I wanted. So the so solution was to upload via SSH, which is beautiful.
+
+Upload/transfer folder: 
+scp -P 2222 -r local/location vagrant@127.0.0.1:/remote/location
+
+Example:
+scp -P 2222 -r ~/downloads/fontsfolder vagrant@127.0.0.1:~/.fonts/
+scp file.php user@remote.host:~/Code/app
+
+
+Here are some other examples.
+Link: http://www.shellhacks.com/en/10-Examples-Copying-Files-over-SSH
+
+----
+
+79. Snappy Laravel 4.2 problem (wkhtmltopdf)
+
+I had some problems with getting Snappy Laravel (wkhtmltopdf) to work in my homestead box. Here are the steps to get it working:
+
+1. sudo apt-get install wkhtmltopdf (this will be located at /usr/bin directory)
+   # you can cd to the dir example: cd /usr/bin and see if they are installed there		
+2. sudo chmod a+x /usr/bin/wkhtmltopdf
+3. sudo apt-get install openssl build-essential xorg libssl-dev
+4. sudo /usr/local/bin/wkhtmltopdf http://www.google.com test.pdf 
+   #Test if this works, in my machine it did not work and I had to do some more steps
+5. sudo apt-get install xvfb
+6. touch wkhtmltopdf.sh
+7. sudo nano wkhtmltopdf.sh
+8. add this line: xvfb-run wkhtmltopdf "$@"
+9. ctrl + o (to save)
+10. ctrl + x (to exit)
+11. wkhtmltopdf.sh http://www.google.com test.pdf (should create pdf file named test.pdf)
+    # in my case i printed it out to /usr/test.pdf like this, because of permissions
+    # wkhtmltopdf.sh http://www.google.com usr/test.pdf			 
+12. Now edit snappy config file mine is located in /app/config/packages/barryvdh/laravel-snappy/config.php
+
+
+Config.php file should look like this:
+
+<?php
+
+return array(
+
+
+    'pdf' => array(
+        'enabled' => true,
+        'binary' => '/usr/bin/wkhtmltopdf.sh',
+        'options' => array(),
+    ),
+    'image' => array(
+        'enabled' => true,
+        'binary' => '/usr/bin/wkhtmltoimage.sh',
+        'options' => array(),
+    ),
+
+);
+
+If you don’t have a config read this documentation:
+https://github.com/barryvdh/laravel-snappy/tree/0.1
+
+This link helped me on the right track.
+Link: http://stackoverflow.com/questions/9604625/wkhtmltopdf-cannot-connect-to-x-server
+
+----
 
 78. Button should not submit
 
