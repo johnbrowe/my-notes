@@ -131,6 +131,144 @@ Link: http://stackoverflow.com/questions/9604625/wkhtmltopdf-cannot-connect-to-x
 
 ----
 
+89. JavaScript Design Patterns
+
+Here is a good article on the "most" important design patterns in JavaScript:
+
+https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
+
+
+----
+
+88. Animated Counter
+
+Here is the snippet:
+
+http://codepen.io/johnbrowe/pen/addmmZ
+
+----
+
+87. JS Functional libraries
+
+Libs I need to digg into:
+Underscore: http://underscorejs.org/
+lodash: https://lodash.com/
+Ramda: http://ramdajs.com/
+
+----
+
+86. Good ES6 iterators article
+
+Link: http://ruben-cordeiro.com/es6-overview-iterators/
+
+----
+
+85. Merge or concatenate array JavaScript
+
+If you want to set to arrays together:
+
+var array1 = ['John'];
+var array2 = ['Andreassen'];
+
+var array3 = array1.concat(array2)
+
+----
+
+84. Sort days by week day order
+
+I made a pen on codepen.io
+
+Link: http://codepen.io/johnbrowe/pen/pjmwZV?editors=101
+
+
+----
+
+83.Vue.js component inside component
+
+File structure:
+/Vue/app.js
+/Vue/Components/parent.js
+/Vue/Components/child.js
+
+Here is app file:
+new Vue({
+
+    el: "#app",
+
+    components: {
+        'parent-component': require('./components/admin/parent')
+    }
+
+});
+
+
+// Parent component file
+module.exports = {
+
+    // This is the important part	
+    components: {
+        'counter': require('./counter')
+    },
+    ready: function(){}
+    data: function () {},
+    methods: {}
+}
+
+// Child component
+module.exports =
+
+{
+    template: '<button v-on:click="updateCount">{{ count }}</button>',
+    data: function () {
+        return { count: 0 }
+    }
+    methods: {}
+
+};
+
+----
+
+82. Vue.js component
+
+
+
+Here is an example: http://codepen.io/johnbrowe/pen/xwNKdY?editors=101
+
+
+----
+
+81. Uninstall global packages NPM
+
+List global packages (also on Windows):
+npm ls -g --depth=0
+
+Uninstall:
+npm uninstall -g "package name"
+
+Example:
+npm uninstall -g gulp
+
+
+----
+
+80. Laravel Lang::get with argument
+
+admin.json
+{"welcome": "Velkommen :username"}
+
+Blade:
+{{ Lang::get('admin.welcome', ['username' => 'john']) }}
+
+----
+
+79. Colors in web console
+
+Works in Chrome and Firefox have not tested others.
+
+console.log("%c" + key, 'background: red; color: white');
+
+----
+
 78. Button should not submit
 
 I guess by default button type is "submit", so if you want button not to submit form.
@@ -255,8 +393,10 @@ Then I tried SQLWave and for my simple needs it works perfectly, there is nothin
 
 Here is nice snippet for seeing which data you are working with.
 
-<pre>@{{ $data | json }}</pre>
+<pre>{{ $data | json }}</pre>
 
+If you are using Laravel Blade templating engine, then like this:
+<pre>@{{ $data | json }}</pre>
 ----
 
 69. ES6 features I really like
@@ -799,7 +939,7 @@ to
 
 If you need a "tag" which will set the dash where you want on line break shy is the answer.
 
-&shy; 
+<pre>&shy;</pre> 
 
 for example:
 
