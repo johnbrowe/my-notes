@@ -1,6 +1,6 @@
 ----
 
-85. Vue.js unescape delimiters text trick
+96. Vue.js unescape delimiters text trick
 
 Usually it’s done like this:
 
@@ -17,14 +17,14 @@ new Vue({ … })
 
 ----
 
-84. Mac shortcuts
+95. Mac shortcuts
 
 Force to quit program:
 ALT+CMD+ESC
 
 ----
 
-83. Wrong font in PDF app
+94. Wrong font in PDF app
 
 As I was working on a PDF app the font thin/100 was behaving wrong, and was being to bold in relation to what I was expecting.
 
@@ -35,7 +35,7 @@ After hours I wound out that the problem was the font file. The font that I had 
 
 ----
 
-82. SSH without vagrant ssh in Homestead
+93. SSH without vagrant ssh in Homestead
 
 I was just curious how to login in to the vagrant homestead box without vagrant ssh.
 
@@ -47,7 +47,7 @@ Many times people leave it empty, though I never do this.
 
 ----
 
-81. Local font for wkhtmltopdf in Homestead box
+92. Local font for wkhtmltopdf in Homestead box
 
 I needed to use local fonts on my Laravel PDF app.
 
@@ -62,7 +62,7 @@ I just formatted to all formats so I was sure to hit the right one.
 
 ----
 
-80. Copy files to Homestead via SSH
+91. Copy files to Homestead via SSH
 
 For some kind of reason I was not able to use sftp to login to my Homestead.
 
@@ -81,7 +81,7 @@ Link: http://www.shellhacks.com/en/10-Examples-Copying-Files-over-SSH
 
 ----
 
-79. Snappy Laravel 4.2 problem (wkhtmltopdf)
+90. Snappy Laravel 4.2 problem (wkhtmltopdf)
 
 I had some problems with getting Snappy Laravel (wkhtmltopdf) to work in my homestead box. Here are the steps to get it working:
 
