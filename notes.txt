@@ -1,3 +1,17 @@
+﻿----
+
+97. Vagrant add box by version
+
+vagrant box add "boxname" --box-version "version"
+
+For example I needed to install an older version of homestead box.
+
+First i removed the old box with:
+vagrant box remove laravel/homestead
+
+Then I installed an older version with this command:
+vagrant box add laravel/homestead --box-version 0.3.3
+
 ----
 
 96. Vue.js unescape delimiters text trick
