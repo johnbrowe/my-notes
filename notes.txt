@@ -1,5 +1,76 @@
 ----
 
+101. JavaScript Apply and Call
+
+These methods allow objects to borrow methods/functions from other methods.
+
+Example:
+http://codepen.io/johnbrowe/pen/QNKpNP?editors=1011 
+
+
+----
+
+100. HTML5 Section & Article
+
+An section is a self contained part of the document, while article is an individual story that could be understood outside the page.
+
+Example:
+<body>
+<div class=“container”>
+<section>
+<h1>Articles about HTML</h1>	
+<article></article>
+<article></article>
+<article></article>
+</section>
+<section>
+<h1>Articles about HTML</h1>
+<article></article>
+<article></article>
+<article></article>
+</section>
+</div>
+</body>
+
+----
+
+99. Apache commands
+
+I always forget these simple commands:
+
+service apache2 start
+service apache2 stop
+service apache2 restart
+
+----
+
+98. [PDO Exception] Could not find driver - Laravel
+
+I got this exception while trying to set up Laravel on a server.
+
+The solution was to install php5-sqlite, and then it worked perfectly.
+
+sudo apt-get install php5-sqlite
+
+----
+
+97. Mcrypt missing in phpinfo() after install
+
+For some kind of reason Mcrypt was not showing up in phpinfo after install.
+It was though located in the mods_available folder.
+
+Solution was to:
+cd /etc/php5/mods_available
+sudo php5enmod mcrypt 
+sudo service apache2 restart
+
+Then it showed up in the phpinfo
+
+Inspiration:
+Link: http://stackoverflow.com/questions/22721630/the-mcrypt-extension-is-missing-please-check-your-php-configuration
+
+----
+
 96. Vue.js unescape delimiters text trick
 
 Usually it’s done like this:
@@ -53,8 +124,8 @@ I needed to use local fonts on my Laravel PDF app.
 
 For the css to the local fonts you need to create a dir in homestead.
 
-1. cd ~
-2. sudo mkdir .fonts
+1. cd /usr/share/fonts
+2. mkdir Truetype
 3. add fonts here
 
 I used font squirrel to convert fonts to the right format.
@@ -89,19 +160,20 @@ I had some problems with getting Snappy Laravel (wkhtmltopdf) to work in my home
    # you can cd to the dir example: cd /usr/bin and see if they are installed there		
 2. sudo chmod a+x /usr/bin/wkhtmltopdf
 3. sudo apt-get install openssl build-essential xorg libssl-dev
-4. sudo /usr/local/bin/wkhtmltopdf http://www.google.com test.pdf 
+4. sudo /usr/bin/wkhtmltopdf http://www.google.com test.pdf 
    #Test if this works, in my machine it did not work and I had to do some more steps
 5. sudo apt-get install xvfb
-6. touch wkhtmltopdf.sh
+6. touch wkhtmltopdf.sh (this should be done in the /usr/bin/ folder)
 7. sudo nano wkhtmltopdf.sh
 8. add this line: xvfb-run wkhtmltopdf "$@"
 9. ctrl + o (to save)
 10. ctrl + x (to exit)
 11. wkhtmltopdf.sh http://www.google.com test.pdf (should create pdf file named test.pdf)
-    # in my case i printed it out to /usr/test.pdf like this, because of permissions
-    # wkhtmltopdf.sh http://www.google.com usr/test.pdf			 
+    # in my case I printed it out to /usr/test.pdf like this, because of permissions
+    # wkhtmltopdf.sh http://www.google.com usr/test.pdf			  		
 12. Now edit snappy config file mine is located in /app/config/packages/barryvdh/laravel-snappy/config.php
-
+    # In some cases you will get permission denied
+13. If so you need to get the wkhtmltopdf.sh permission by writing: chmod +x filename.sh 	
 
 Config.php file should look like this:
 
