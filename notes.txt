@@ -1,3 +1,44 @@
+﻿----
+
+98. Enable developer tools windows
+
+My windows machine had some security settings so I was not able to use developer tool in Chrome.
+
+Here is my solution:
+
+Click start
+
+type regedit in search
+
+Click regedit.exe
+
+Software\Policies\Google\Chrome
+
+In this map there is a file called DeveloperToolsDisabled
+
+Just delete it.
+
+Shut down Chrome, and then start it a again.
+
+Now Developer tools should work.
+
+Link: https://answers.yahoo.com/question/index?qid=20081101103050AAoi6XY
+Link: http://stackoverflow.com/questions/19726308/google-chrome-develop-tools-disabled
+
+----
+
+97. Vagrant add box by version
+
+vagrant box add "boxname" --box-version "version"
+
+For example I needed to install an older version of homestead box.
+
+First i removed the old box with:
+vagrant box remove laravel/homestead
+
+Then I installed an older version with this command:
+vagrant box add laravel/homestead --box-version 0.3.3
+
 ----
 
 101. JavaScript Apply and Call
@@ -925,7 +966,7 @@ http://codepen.io/siiron/pen/jfBhy/?editors=110
 Choose connection method: Standard TCP/IP over SSH
 
 Connection name: What Ever you want
-SSH Hostname: 127.0.0.1
+SSH Hostname: 127.0.0.1:2222
 SSH Username: vagrant
 SSH Key File: if you don't have a key you need to create one with putty or through git bash
 MySQL hostname: 127.0.0.1
@@ -934,7 +975,7 @@ Username: homestead
 password: secret	
 
 
-http://stackoverflow.com/questions/27202109/unable-to-access-the-database-of-homestead-environment-laravel-through-mysql-w
+	
 
 ----
 
