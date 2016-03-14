@@ -1,6 +1,6 @@
 ﻿----
 
-100. Sync dates with pickadate
+105. Sync dates with pickadate
 
 I found this wonderful pen/snippet which shows how to sync dates, so that "to date" can't be smaller than "from date" and the opposite way
 
@@ -9,7 +9,7 @@ Link: http://codepen.io/amsul/pen/nGckA
 
 ----
 
-99. Enable chrome extension windows admin permission
+104. Enable chrome extension windows admin permission
 
 My windows machine had some admin permissions settings so I was not able to use use or install extension in Chrome.
 
@@ -30,9 +30,10 @@ And you are good to go.
 
 https://productforums.google.com/forum/#!topic/chrome/suI0cnVv7AM
 
+
 ----
 
-98. Enable developer tools windows
+103. Enable developer tools windows
 
 My windows machine had some security settings so I was not able to use developer tool in Chrome.
 
@@ -59,7 +60,7 @@ Link: http://stackoverflow.com/questions/19726308/google-chrome-develop-tools-di
 
 ----
 
-97. Vagrant add box by version
+102. Vagrant add box by version
 
 vagrant box add "boxname" --box-version "version"
 
