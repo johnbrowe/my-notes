@@ -1,5 +1,37 @@
 ﻿----
 
+100. Sync dates with pickadate
+
+I found this wonderful pen/snippet which shows how to sync dates, so that "to date" can't be smaller than "from date" and the opposite way
+
+Link: http://codepen.io/amsul/pen/nGckA
+
+
+----
+
+99. Enable chrome extension windows admin permission
+
+My windows machine had some admin permissions settings so I was not able to use use or install extension in Chrome.
+
+Here is my solution:
+
+Click start
+
+type regedit in search
+
+Click regedit.exe
+
+HKEY_LOCAL_MACHINE\Software\Policies\Google
+
+Here you fill find a map called chrome, just delete it and restart Chrome.
+
+And you are good to go.
+
+
+https://productforums.google.com/forum/#!topic/chrome/suI0cnVv7AM
+
+----
+
 98. Enable developer tools windows
 
 My windows machine had some security settings so I was not able to use developer tool in Chrome.
@@ -12,7 +44,7 @@ type regedit in search
 
 Click regedit.exe
 
-Software\Policies\Google\Chrome
+HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
 
 In this map there is a file called DeveloperToolsDisabled
 
