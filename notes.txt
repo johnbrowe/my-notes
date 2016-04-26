@@ -1,5 +1,112 @@
 ﻿----
 
+111. Screen cast recorder
+
+I was in search for a new screen cast recorder and got this tool recommended.
+
+https://screencast-o-matic.com/
+
+Looks promising.
+
+
+----
+
+110. PHPUnit test specific test file
+
+From homestead app root directory:
+vendor/bin/phpunit --filter 'testClassFolder\\testclass'
+
+vendor/bin/phpunit --filter 'messages\\CheckForMessagesTest'
+
+----
+
+109. SEO
+
+A co-worker recommended Site Analyzer to analyse SEO site
+
+1 month for free, and able to use it once a month.
+
+https://www.site-analyzer.com/
+
+----
+
+108. Homestead domain name without port
+
+You usually set your host file to this:
+127.0.0.1 johnhoj.app
+
+Add a new pair to your host file.
+192.168.10.10 johnhoj.app
+
+Reload your vagrant box
+
+----
+
+107. Object-fit Polyfill example
+
+
+http://codepen.io/jonneal/pen/EKPONK
+
+
+----
+
+106. Set up xdebug with Homestead & PHPStorm
+
+You need homestead box version 4.2.0 (versions before this do not have xdebug to php 7)
+
+First ssh in to your homestead box:
+vagrant up 
+Vagrant SSH
+
+When you are ssh'd in type: (this will create a file called debug.ini, you can called it something else if you want)
+sudo nano /etc/php/7.0/fpm/conf.d/debug.ini
+
+add this snippet and save:
+xdebug.remote_enable = 1
+xdebug.remote_host = 10.0.2.2
+xdebug.remote_port = 9000
+xdebug.idekey = phpstorm
+
+Add the right to the file:
+sudo chmod a+x debug.ini
+
+Install chrome extension:
+https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc
+
+Activate extention
+
+Right click on extension icon and choose options:
+set ide key dropdown to other and write phpstorm (in lowercase, should be same as xdebug.idekey)
+
+
+PHPSTORM
+Go to settings:
+file -> settings -> languages & frameworks -> PHP -> Servers
+
+Click:
++ (plus icon)
+
+Name: Homestead (can be what ever you want)
+
+Shared: uncheck
+
+Host: your-local-domain-name.app (in my case johnhoj.app)
+
+Port: 9000 (same as xdebug.remote_port)
+
+Debugger: Xdebug
+
+Use path mappings: check
+
+right to the path to your project directory:
+Double click (absolute path on the server)
+Write the same path as your homestead.yaml folder to path is: 
+example: /home/vagrant/johnhoj  
+
+Then click apply.
+
+----
+
 105. Sync dates with pickadate
 
 I found this wonderful pen/snippet which shows how to sync dates, so that "to date" can't be smaller than "from date" and the opposite way
@@ -1614,40 +1721,4 @@ https://www.youtube.com/watch?v=GHTZn3atTcM
 
 ----
 
-ICONS:
-http://www.flaticon.com/
 
-
-BOOKMARKS:
-https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md
-http://ulyssesonline.com/2014/07/24/install-laravel-4-2-on-ubuntu-server-14-04-lts/
-http://raspberrywebserver.com/serveradmin/get-your-raspberry-pi-web-site-on-line.html
-Google fonts - http://katydecorah.com/font-library/#/tattoo
-
-LOOKUPS:
-http://www.imagemagick.org/
-
-TO READ:
-OOCSS, SMACSS & BEM
-https://mattstauffer.co/blog/organizing-css-oocss-smacss-and-bem
-http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
-https://smacss.com/
-http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
-https://coderwall.com/p/wixovg/bootstrap-without-all-the-debt
-https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06
-http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
-
-My CSS Lookups:
-http://www.sitepoint.com/web-foundations/nth-typen-css-selector/
-http://www.sitepoint.com/web-foundations/understanding-nth-child-pseudo-class-expressions/
-
-
-Tutorial sites:
-https://sub.watchmecode.net/ - JavaScript & Node.js
-https://lynda.com
-http://teamthreehouse.com
-http://pluralsight.com
-http://codeschool.com
-http://udacity.com
-http://coursera.com
-http://udemy.com
