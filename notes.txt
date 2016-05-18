@@ -1,5 +1,57 @@
 ﻿----
 
+113. My first extension Chrome extension
+
+I have always wondered how a Chrome extension works.
+Now I know.
+
+I needed to set a cookie with an ID onload every time the browser was updated locally to emulate a cloud service.
+
+I found out it is quite simple to setup.
+
+I created a folder called add_cookie with two files:
+
+add_cookie/
+	- content.js
+	- manifest.js 
+
+
+In manifest.js I inserted this code:
+
+// Manifest
+{
+  "manifest_version": 2,
+  "name": "Add Cookie Local",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
+
+In content.js is just set the cookie:
+
+// content.js
+document.cookie = "Ely_vID=114p93086";
+
+
+Upload the folder to chrome extension:
+settings => Extensions => Load unpacked extension
+
+
+----
+
+112. Chrome Flag
+
+To enable flags in Chrome: 
+chrome://flags
+
+----
+
 111. Screen cast recorder
 
 I was in search for a new screen cast recorder and got this tool recommended.
