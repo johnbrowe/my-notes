@@ -1,5 +1,32 @@
 ﻿----
 
+114. SSH to Homestead with Navicat
+
+I had some problems with opening a connection to Navicat through SSH.
+
+The main was i went directly to New Connection and pressed the SSH tab and filled in:
+
+Host name/IP Address: 127.0.0.1
+Port: 2222
+User Name: vagrant
+Authentication Method: Public Key
+Public key: (path to you private key)
+Passphrase: secret
+
+And i get this error:
+1045 - Access denied for user root@localhost (using password: No)
+
+The problem was of course to fill out the general tab with this data:
+
+Connection name: (whatever you want)
+Host name/IP Address: localhost
+Port: 3306
+User Name: homestead
+password: secret
+
+
+----
+
 113. My first extension Chrome extension
 
 I have always wondered how a Chrome extension works.
