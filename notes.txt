@@ -1,3 +1,20 @@
+----
+
+115. Install Node on Ubuntu
+
+After installing apt-get install nodejs.
+
+I could only use node by using command nodejs, which does not work well with Gulp packages.
+
+After reading up on it it seems there is some kind of conflict package on apt-get therefore we need to remove the existing "node" app.  
+* sudo apt-get --purge remove node
+
+Also remove nodejs so you can install it again.
+* sudo apt-get --purge remove nodejs
+
+Then you can install nodejs again and this time it will react on "node" command
+* sudo apt-get install nodejs
+
 ﻿----
 
 116. Transition with height/width auto
