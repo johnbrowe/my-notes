@@ -1,5 +1,55 @@
 ﻿----
 
+116. Transition with height/width auto
+
+Working with transitions is usually very easy. But i had at problem where the transition just would not work.
+
+After googling around I found the error and the solution.
+
+The error was that you cannot transition height: auto
+
+My code:
+
+.menu {
+  transition: height 0.5s ease-out;		
+  height: 535px;	
+}
+
+.menu --open {
+  height: auto;	
+}
+ 
+
+Link: https://jdsteinbach.com/css/holy-grail-css-animation/
+
+
+----
+
+115. Add element after another
+
+I was quite impressed by this JS function insertAdjacentHTML.
+
+It is an easy way to add an element after another, kindof like .after() in jQuery works.
+
+// Create HTML alement 
+var html = '<button>New button</a>';
+
+// Get slider element
+var slider = document.getElementById('slider');
+
+// Insert button after slider element
+slider.insertAdjacentHTML('afterend', html);
+
+Quite clean and easy to use. There also other options such as:
+
+'beforebegin' - Before the element
+'afterbegin'  - Inside the element, before first child
+'beforeend'   - Inside the element, after last child
+'afterend'    - After the element
+
+
+----
+
 114. SSH to Homestead with Navicat
 
 I had some problems with opening a connection to Navicat through SSH.
