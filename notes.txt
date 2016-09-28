@@ -1,5 +1,41 @@
 ----
 
+118. Change ownership of folder
+
+The folder in my local apache had the root ownership meaning I could not edit the file without using sudo.
+
+To change that I changed the ownership from root to my user which in this case is john.
+
+chown -R john:john /var/www/html/my_website
+
+After this I was able to edit without sudo permissions.
+
+
+----
+
+117. Font-weight not working on Wkhtmltopdf Ubuntu 16.04
+
+After setting my app up in a new server, all my thin and bold fonts where rendering as normal.
+
+Meaning font-weight: 100 and font-weight: 700 would be displayed as font-weight: 500.
+
+I tried different settings and version of the font for about 3 hours before I tried to change the font-weight: 100 to font-weight: lighter and bang it worked.
+
+So the fix was to use lighter, normal and bold instead of 100, 500, 700.
+
+Still not sure why this suddently changed, and I am too tired to look more into this today. 
+
+
+----
+
+116. See list of available fonts Ubuntu
+
+This command is a good way to see which fonts are available and how they are named.
+$ fc-list
+
+
+----
+
 115. Install Node on Ubuntu
 
 After installing apt-get install nodejs.
