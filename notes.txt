@@ -1,5 +1,37 @@
 ----
 
+121. Font not displayed in PDF
+
+After a deploy the on my PDF app, the PDF file was not using the right font.
+
+Problem was that the font was missing from the /etc/share/fonts folder, not sure if it was an apt-get update or something else which made the font family disappear.
+
+But I copied it back over to the fonts folder from my backup and it works again.
+
+
+----
+
+120. Remove column from table
+
+Here is how you delete a column:
+ALTER TABLE table_name DROP COLUMN column_name;
+
+Example
+ALTER TABLE homestead.users DROP COLUMN avatar;
+
+----
+
+119. Create migration file Laravel
+
+I always forget the command to create a new migration file in Larvel.
+
+So here it is:
+php artisan make:migration create_users_table
+
+Link: https://laravel.com/docs/5.3/migrations
+
+----
+
 118. Change ownership of folder
 
 The folder in my local apache had the root ownership meaning I could not edit the file without using sudo.
