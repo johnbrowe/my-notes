@@ -1,5 +1,73 @@
 ﻿----
 
+121. Font not displayed in PDF
+
+After a deploy the on my PDF app, the PDF file was not using the right font.
+
+Problem was that the font was missing from the /etc/share/fonts folder, not sure if it was an apt-get update or something else which made the font family disappear.
+
+But I copied it back over to the fonts folder from my backup and it works again.
+
+
+----
+
+120. Remove column from table
+
+Here is how you delete a column:
+ALTER TABLE table_name DROP COLUMN column_name;
+
+Example
+ALTER TABLE homestead.users DROP COLUMN avatar;
+
+----
+
+119. Create migration file Laravel
+
+I always forget the command to create a new migration file in Larvel.
+
+So here it is:
+php artisan make:migration create_users_table
+
+Link: https://laravel.com/docs/5.3/migrations
+
+----
+
+118. Change ownership of folder
+
+The folder in my local apache had the root ownership meaning I could not edit the file without using sudo.
+
+To change that I changed the ownership from root to my user which in this case is john.
+
+chown -R john:john /var/www/html/my_website
+
+After this I was able to edit without sudo permissions.
+
+
+----
+
+117. Font-weight not working on Wkhtmltopdf Ubuntu 16.04
+
+After setting my app up in a new server, all my thin and bold fonts where rendering as normal.
+
+Meaning font-weight: 100 and font-weight: 700 would be displayed as font-weight: 500.
+
+I tried different settings and version of the font for about 3 hours before I tried to change the font-weight: 100 to font-weight: lighter and bang it worked.
+
+So the fix was to use lighter, normal and bold instead of 100, 500, 700.
+
+Still not sure why this suddently changed, and I am too tired to look more into this today.
+
+
+----
+
+116. See list of available fonts Ubuntu
+
+This command is a good way to see which fonts are available and how they are named.
+$ fc-list
+
+
+----
+
 118. All input not showing on submit
 
 I got a bug on on of my web apps as newly created products where not being sent when I submitted the form.
@@ -7,7 +75,7 @@ I got a bug on on of my web apps as newly created products where not being sent 
 Every input looked good in the form and I just many many many hours trying to debug this issue.
 
 
-The problem was PHP has a default security setting that says PHP will not receive more than 1000 input fields. And i was sending about 1100 fields meaning that last 100 input fields would not show up. It just ignores the rest and will not send an error. 
+The problem was PHP has a default security setting that says PHP will not receive more than 1000 input fields. And i was sending about 1100 fields meaning that last 100 input fields would not show up. It just ignores the rest and will not send an error.
 
 If you are using the Apache the fix is simple just add these lines to you .htaccess file.
 php_value max_input_vars 6000
@@ -72,14 +140,14 @@ The error was that you cannot transition height: auto
 My code:
 
 .menu {
-  transition: height 0.5s ease-out;		
-  height: 535px;	
+  transition: height 0.5s ease-out;
+  height: 535px;
 }
 
 .menu --open {
-  height: auto;	
+  height: auto;
 }
- 
+
 
 Link: https://jdsteinbach.com/css/holy-grail-css-animation/
 
@@ -92,7 +160,7 @@ I was quite impressed by this JS function insertAdjacentHTML.
 
 It is an easy way to add an element after another, kindof like .after() in jQuery works.
 
-// Create HTML alement 
+// Create HTML alement
 var html = '<button>New button</a>';
 
 // Get slider element
