@@ -1,6 +1,50 @@
+﻿----
+
+118. All input not showing on submit
+
+I got a bug on on of my web apps as newly created products where not being sent when I submitted the form.
+
+Every input looked good in the form and I just many many many hours trying to debug this issue.
+
+
+The problem was PHP has a default security setting that says PHP will not receive more than 1000 input fields. And i was sending about 1100 fields meaning that last 100 input fields would not show up. It just ignores the rest and will not send an error. 
+
+If you are using the Apache the fix is simple just add these lines to you .htaccess file.
+php_value max_input_vars 6000
+php_value suhosin.post.max_vars 6000
+php_value suhosin.request.max_vars 6000
+
+And you are good to go.
+
+
+On Nginx you need to edit the php.ini file, and uncomment the line with max_input_vars and set it to a higher number.
+
+If you are not sure where the php.ini is located just use the phpinfo(); function.
+
+There will be a row called "Loaded Configuration File" which will tell you the path to the php.ini file.
+
+The path will be something like this /etc/php/7.0/php.ini.
+
+So to edit you could use a line like as this.
+
+nano /etc/php/7.0/php.ini
+
+It will look like this:
+; max_input_vars = 1000
+
+I changed mine to this:
+max_input_vars = 4000
+
+After this you have to restart php process manager with this command:
+
+/etc/init.d/php7.0-fpm restart
+
+Now it should work
+
+
 ----
 
-115. Install Node on Ubuntu
+117. Install Node on Ubuntu
 
 After installing apt-get install nodejs.
 
