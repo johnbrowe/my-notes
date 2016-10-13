@@ -1,4 +1,4 @@
-123. Permission denied public key to github 
+123. Permission denied public key to github
 
 I tried to git clone my repository to my Ubuntu machine.
 
@@ -14,7 +14,7 @@ Which was very strange because I had inserted my public key in the Github settin
 My workaround was to use the URL instead of the git@github.com
 
 sudo git clone https://github.com/johnbrowe/gomagott.git
- 
+
 
 ----
 
@@ -25,7 +25,7 @@ I always forget the command to search within Nano so here it is:
 Open search: CTRL + W
 To search: ENTER
 Repeat search: ALT + W (Arrow up/down)
-   
+
 
 
 ----
@@ -85,7 +85,7 @@ I tried different settings and version of the font for about 3 hours before I tr
 
 So the fix was to use lighter, normal and bold instead of 100, 500, 700.
 
-Still not sure why this suddently changed, and I am too tired to look more into this today. 
+Still not sure why this suddently changed, and I am too tired to look more into this today.
 
 
 ----
@@ -98,7 +98,51 @@ $ fc-list
 
 ----
 
-115. Install Node on Ubuntu
+118. All input not showing on submit
+
+I got a bug on on of my web apps as newly created products where not being sent when I submitted the form.
+
+Every input looked good in the form and I just many many many hours trying to debug this issue.
+
+
+The problem was PHP has a default security setting that says PHP will not receive more than 1000 input fields. And i was sending about 1100 fields meaning that last 100 input fields would not show up. It just ignores the rest and will not send an error.
+
+If you are using the Apache the fix is simple just add these lines to you .htaccess file.
+php_value max_input_vars 6000
+php_value suhosin.post.max_vars 6000
+php_value suhosin.request.max_vars 6000
+
+And you are good to go.
+
+
+On Nginx you need to edit the php.ini file, and uncomment the line with max_input_vars and set it to a higher number.
+
+If you are not sure where the php.ini is located just use the phpinfo(); function.
+
+There will be a row called "Loaded Configuration File" which will tell you the path to the php.ini file.
+
+The path will be something like this /etc/php/7.0/php.ini.
+
+So to edit you could use a line like as this.
+
+nano /etc/php/7.0/php.ini
+
+It will look like this:
+; max_input_vars = 1000
+
+I changed mine to this:
+max_input_vars = 4000
+
+After this you have to restart php process manager with this command:
+
+/etc/init.d/php7.0-fpm restart
+
+Now it should work
+
+
+----
+
+117. Install Node on Ubuntu
 
 After installing apt-get install nodejs.
 
@@ -114,6 +158,56 @@ Then you can install nodejs again and this time it will react on "node" command
 * sudo apt-get install nodejs
 
 ﻿----
+
+116. Transition with height/width auto
+
+Working with transitions is usually very easy. But i had at problem where the transition just would not work.
+
+After googling around I found the error and the solution.
+
+The error was that you cannot transition height: auto
+
+My code:
+
+.menu {
+  transition: height 0.5s ease-out;
+  height: 535px;
+}
+
+.menu --open {
+  height: auto;
+}
+
+
+Link: https://jdsteinbach.com/css/holy-grail-css-animation/
+
+
+----
+
+115. Add element after another
+
+I was quite impressed by this JS function insertAdjacentHTML.
+
+It is an easy way to add an element after another, kindof like .after() in jQuery works.
+
+// Create HTML alement
+var html = '<button>New button</a>';
+
+// Get slider element
+var slider = document.getElementById('slider');
+
+// Insert button after slider element
+slider.insertAdjacentHTML('afterend', html);
+
+Quite clean and easy to use. There also other options such as:
+
+'beforebegin' - Before the element
+'afterbegin'  - Inside the element, before first child
+'beforeend'   - Inside the element, after last child
+'afterend'    - After the element
+
+
+----
 
 114. SSH to Homestead with Navicat
 
