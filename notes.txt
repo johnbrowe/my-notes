@@ -1,4 +1,4 @@
-123. Permission denied public key to github
+126. Permission denied public key to github
 
 I tried to git clone my repository to my Ubuntu machine.
 
@@ -18,7 +18,7 @@ sudo git clone https://github.com/johnbrowe/gomagott.git
 
 ----
 
-122. Search in Nano Editor
+125. Search in Nano Editor
 
 I always forget the command to search within Nano so here it is:
 
@@ -27,10 +27,9 @@ To search: ENTER
 Repeat search: ALT + W (Arrow up/down)
 
 
-
 ----
 
-121. Font not displayed in PDF
+124. Font not displayed in PDF
 
 After a deploy the on my PDF app, the PDF file was not using the right font.
 
@@ -41,7 +40,7 @@ But I copied it back over to the fonts folder from my backup and it works again.
 
 ----
 
-120. Remove column from table
+123. Remove column from table
 
 Here is how you delete a column:
 ALTER TABLE table_name DROP COLUMN column_name;
@@ -51,7 +50,7 @@ ALTER TABLE homestead.users DROP COLUMN avatar;
 
 ----
 
-119. Create migration file Laravel
+122. Create migration file Laravel
 
 I always forget the command to create a new migration file in Larvel.
 
@@ -62,7 +61,7 @@ Link: https://laravel.com/docs/5.3/migrations
 
 ----
 
-118. Change ownership of folder
+121. Change ownership of folder
 
 The folder in my local apache had the root ownership meaning I could not edit the file without using sudo.
 
@@ -75,7 +74,7 @@ After this I was able to edit without sudo permissions.
 
 ----
 
-117. Font-weight not working on Wkhtmltopdf Ubuntu 16.04
+120. Font-weight not working on Wkhtmltopdf Ubuntu 16.04
 
 After setting my app up in a new server, all my thin and bold fonts where rendering as normal.
 
@@ -90,7 +89,7 @@ Still not sure why this suddently changed, and I am too tired to look more into 
 
 ----
 
-116. See list of available fonts Ubuntu
+119. See list of available fonts Ubuntu
 
 This command is a good way to see which fonts are available and how they are named.
 $ fc-list
