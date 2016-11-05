@@ -10,7 +10,7 @@ cd into current directory
 Type into terminal:
 serve -p 3000
 
-Go to localhost:3000
+Go to localhost:3000 in browser
 
 And website is served.
 
