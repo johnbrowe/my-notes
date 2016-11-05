@@ -1,3 +1,29 @@
+128. Instant Server for Current Directory
+
+A nice way to quickly create at server for quick testing.
+
+Install package server globally with this command:
+npm install serve -g
+
+cd into current directory
+
+Type into terminal:
+serve -p 3000
+
+Go to localhost:3000
+
+And website is served.
+
+
+127. Online developer tools to remember
+
+These are my favorite online tools at the moment:
+https://hyperdev.com/
+https://repl.it/
+https://www.codewars.com/
+http://codepen.io/
+
+
 126. Permission denied public key to github
 
 I tried to git clone my repository to my Ubuntu machine.
