@@ -1,3 +1,43 @@
+----
+
+130. Connecting to MongoDB Debian VM
+
+Working on a new project I needed to connect to at MongoDB instance on a Debian virtual machine.
+
+I had many multiple problem firstly installing the right version of Mongo and futher more connecting to the MongoDB with Robomongo.
+
+I tried multiple different installs but nothing really worked.
+
+But I found a solution on SO where it said I should commment out bind_ip = 127.0.0.1 and so I did.
+
+Edit mongod.conf:
+sudo nano /etc/mongod.conf
+
+Comment out bind_p:
+# bind_ip = 127.0.0.1
+
+Restart MongoDB:
+sudo service mongod restart
+
+Here are some other usefull command for debugging MongoDB:
+ps -ef | grep mongo
+lsof -i -ac mongod
+sudo service mongod status
+sudo lsof -iTCP -sTCP:LISTEN | grep mongo
+
+----
+
+129. Force quit application in Ubuntu
+
+Write command "top" to get a list of running processes.
+
+Find process which you want to quit, note it's "pid".
+
+Write command "kill pid"
+
+
+----
+
 128. Instant Server for Current Directory
 
 A nice way to quickly create at server for quick testing.
@@ -14,6 +54,7 @@ Go to localhost:3000 in browser
 
 And website is served.
 
+----
 
 127. Online developer tools to remember
 
@@ -23,6 +64,7 @@ https://repl.it/
 https://www.codewars.com/
 http://codepen.io/
 
+----
 
 126. Permission denied public key to github
 
