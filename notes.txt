@@ -1,4 +1,4 @@
-﻿135. Undefined offset: 0
+135. Undefined offset: 0
 
 Once in a while you get a exception like this one.
 
@@ -12,7 +12,7 @@ But most likely this is an error that occurs when you are trying to access a key
 Example:
 
 $list = ["Sara", "Tinna", "John"];
-echo $list[0]; // "Sara" 
+echo $list[0]; // "Sara"
 echo $list[2]; // "John"
 echo $list[3]; // Undefined offset: 3 :4
 
@@ -81,12 +81,52 @@ sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
 
-sudo ln -sf /usr/local/n/versions/node/<VERSION>/bin/node /usr/bin/node 
+sudo ln -sf /usr/local/n/versions/node/<VERSION>/bin/node /usr/bin/node
 
-In my case: sudo ln -sf /usr/local/n/versions/node/7.0.0/bin/node /usr/bin/node 
+In my case: sudo ln -sf /usr/local/n/versions/node/7.0.0/bin/node /usr/bin/node
 
 You can always use this command to see what the folder is called:
 ls /usr/local/n/versions/node/
+
+
+----
+
+----
+
+130. Connecting to MongoDB Debian VM
+
+Working on a new project I needed to connect to at MongoDB instance on a Debian virtual machine.
+
+I had many multiple problem firstly installing the right version of Mongo and futher more connecting to the MongoDB with Robomongo.
+
+I tried multiple different installs but nothing really worked.
+
+But I found a solution on SO where it said I should commment out bind_ip = 127.0.0.1 and so I did.
+
+Edit mongod.conf:
+sudo nano /etc/mongod.conf
+
+Comment out bind_p:
+# bind_ip = 127.0.0.1
+
+Restart MongoDB:
+sudo service mongod restart
+
+Here are some other usefull command for debugging MongoDB:
+ps -ef | grep mongo
+lsof -i -ac mongod
+sudo service mongod status
+sudo lsof -iTCP -sTCP:LISTEN | grep mongo
+
+----
+
+129. Force quit application in Ubuntu
+
+Write command "top" to get a list of running processes.
+
+Find process which you want to quit, note it's "pid".
+
+Write command "kill pid"
 
 
 ----
