@@ -1,3 +1,96 @@
+﻿135. Undefined offset: 0
+
+Once in a while you get a exception like this one.
+
+ErrorException in Collection.php line 1187:
+Undefined offset: 0 (View: /home/vagrant/Code/.../resources/views/.../index.blade.php)
+
+And if this error occurs in Laravel you are quick to panic and run away to Google I know I do.
+
+But most likely this is an error that occurs when you are trying to access a key that does not exists in an array.
+
+Example:
+
+$list = ["Sara", "Tinna", "John"];
+echo $list[0]; // "Sara" 
+echo $list[2]; // "John"
+echo $list[3]; // Undefined offset: 3 :4
+
+So just go through your view file at figure out where you are trying to access a key that does not exist.
+
+----
+
+134. Browser-sync proxy
+
+When starting browser-sync i often forget this command.
+
+browser-sync start --proxy 'johnjohn.app'
+
+
+----
+
+133. Make HTML Object tag clickable
+
+If had this HTML lined up:
+<a id="btn">
+    <object class="svg" data="rotate.svg" type="image/svg+xml">
+        No fallback
+    </object>
+</a>
+
+and wanted the object icon to be clickable with JS.
+
+The best way I found was to add this line to CSS.
+
+object{
+    pointer-events: none;
+}
+
+
+----
+
+132. MySQL Workbench on Windows 10
+
+I am not sure why but I could not get MySQL Workbench to work on my computer.
+
+After some research I figured out to try installing 32-bit instead of 64-bit and it works.
+
+----
+
+131. Install NVM on Ubuntu
+
+This is by far the best article on installing Node, especially Node Version Manager:
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
+
+130. Enable Bash on Windows
+
+Go to settings -> Update and Security -> For developers
+Enable Developer Mode
+
+Go to Control Panel->Programs->Turn Windows Features on and off
+
+Enable Windows Subsystem for Linux (Beta)
+
+Click Restart Now
+
+----
+
+129. Update Node and NPM verions
+
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
+sudo ln -sf /usr/local/n/versions/node/<VERSION>/bin/node /usr/bin/node 
+
+In my case: sudo ln -sf /usr/local/n/versions/node/7.0.0/bin/node /usr/bin/node 
+
+You can always use this command to see what the folder is called:
+ls /usr/local/n/versions/node/
+
+
+----
+
 128. Instant Server for Current Directory
 
 A nice way to quickly create at server for quick testing.
@@ -14,6 +107,7 @@ Go to localhost:3000 in browser
 
 And website is served.
 
+----
 
 127. Online developer tools to remember
 
@@ -23,6 +117,7 @@ https://repl.it/
 https://www.codewars.com/
 http://codepen.io/
 
+----
 
 126. Permission denied public key to github
 
@@ -40,7 +135,6 @@ Which was very strange because I had inserted my public key in the Github settin
 My workaround was to use the URL instead of the git@github.com
 
 sudo git clone https://github.com/johnbrowe/gomagott.git
-
 
 ----
 
@@ -128,7 +222,6 @@ $ fc-list
 I got a bug on on of my web apps as newly created products where not being sent when I submitted the form.
 
 Every input looked good in the form and I just many many many hours trying to debug this issue.
-
 
 The problem was PHP has a default security setting that says PHP will not receive more than 1000 input fields. And i was sending about 1100 fields meaning that last 100 input fields would not show up. It just ignores the rest and will not send an error.
 
@@ -327,9 +420,7 @@ Looks promising.
 110. PHPUnit test specific test file
 
 From homestead app root directory:
-vendor/bin/phpunit --filter 'testClassFolder\\testclass'
-
-vendor/bin/phpunit --filter 'messages\\CheckForMessagesTest'
+vendor/bin/phpunit --filter=PresaleTest
 
 ----
 
@@ -1075,7 +1166,7 @@ https://www.youtube.com/watch?v=bMir8LOXX6U
 https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase
 
 
-﻿----
+----
 
 64. Wordpress Migration Plugins
 
@@ -1626,7 +1717,7 @@ It will selects all p's that are placed immediately after .class
 
 ----
 
-30. Windows 7 Hostfile path
+30. Windows 7 and 10 Hostfile path
 
 C:\Windows\System32\drivers\etc 
 
