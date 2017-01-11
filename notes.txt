@@ -1,3 +1,24 @@
+﻿136. Optional Callback in JavaScript
+
+Sometimes you need a callback to be optional. 
+function crush(material, cb){
+	// Crush material
+	console.log(material + " has been crushed");
+	// Callback
+	if (cb && typeof(cb) === "function") {
+		cb();
+	}
+}
+
+crush("stone");
+
+crush("stone", function(){
+	console.log("Good job");
+});
+
+Link:
+http://codepen.io/johnbrowe/pen/oBbVwO?editors=1111
+
 135. Undefined offset: 0
 
 Once in a while you get a exception like this one.
