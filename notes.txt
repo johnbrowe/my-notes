@@ -1,4 +1,16 @@
-﻿136. Optional Callback in JavaScript
+﻿137. Install fish on Ubuntu
+
+Fish makes your terminal life alot easier. Here is a easy way to install it.
+sudo apt-add-repository ppa:fish-shell/release-2
+sudo apt-get update
+sudo apt-get install fish
+
+Make it default:
+chsh -s /usr/bin/fish
+
+----
+
+136. Optional Callback in JavaScript
 
 Sometimes you need a callback to be optional. 
 function crush(material, cb){
