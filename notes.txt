@@ -8,6 +8,8 @@ sudo apt-get install fish
 Make it default:
 chsh -s /usr/bin/fish
 
+Link: https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/
+
 ----
 
 136. Optional Callback in JavaScript
