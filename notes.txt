@@ -1,4 +1,52 @@
-﻿137. Install fish on Ubuntu
+﻿138. CSS Responsive embedable
+
+It can be difficult to work with responsive iframes and other embedable stuff. Here is a little snippet which could possible help.
+
+.embed-wrapper {
+  
+	position: relative;
+  
+	display: block;
+  
+	height: 0;
+  
+	padding: 0;
+  
+	overflow: hidden;
+	padding-bottom: 50%; // Adjust to you needs
+
+}
+
+
+.embed {
+  
+	position: absolute;
+  
+	top: 0;
+  
+	left: 0;
+  
+	bottom: 0;
+  
+	height: 100%;
+  
+	width: 100%;
+  
+	border: 0;
+
+}
+
+
+<div class="embed-wrapper">
+	<iframe class="embed" src="..."></iframe>
+</div>
+
+
+
+
+----
+
+137. Install fish on Ubuntu
 
 Fish makes your terminal life alot easier. Here is a easy way to install it.
 sudo apt-add-repository ppa:fish-shell/release-2
