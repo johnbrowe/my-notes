@@ -1,3 +1,18 @@
+140. Gitignore added folders
+
+I always forget how to gitignore cached/added folders such as node_modules.
+
+Maybe writing it down will make me remember.
+
+Use this git command:
+git rm -r --cached "folder"
+
+Forexample:
+git rm -r --cached node_modules
+ 
+
+----
+
 ﻿138. CSS Responsive embedable
 
 It can be difficult to work with responsive iframes and other embedable stuff. Here is a little snippet which could possible help.
@@ -35,7 +50,8 @@ It can be difficult to work with responsive iframes and other embedable stuff. H
 	border: 0;
 
 }
-
+
+
 
 <div class="embed-wrapper">
 	<iframe class="embed" src="..."></iframe>
