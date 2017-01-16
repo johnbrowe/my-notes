@@ -1,3 +1,13 @@
+141. Visual Studio Code auto format/indent
+
+I do not know how often I have googled this. So it is time to write it down.
+
+Windows: SHIFT + ALT + F
+Mac: SHIFT + OPTION + F
+Ubuntu: CTRL + SHIFT + I
+
+----
+
 140. Gitignore added folders
 
 I always forget how to gitignore cached/added folders such as node_modules.
