@@ -1,3 +1,43 @@
+﻿142. Laravel Drop Unique Index
+
+I was trying to drop an unique index via php artisan migrate but got an error which said I could not drop the column  i was trying to remove the unique key from.
+
+This is the failing code:
+public function up()
+{
+	Schema::table('news', function (Blueprint $table) {
+            $table->dropUnique('title');
+        });
+}
+
+public function down()
+{
+	Schema::table('news', function (Blueprint $table) {
+            $table->unique('title');
+        });
+}
+
+The problem was I that dropUnique needs a full path/name for the index.
+
+Working example:
+public function up()
+{
+	Schema::table('news', function (Blueprint $table) {
+            $table->dropUnique('news_title_unique');
+        });
+}
+
+public function down()
+{
+	Schema::table('news', function (Blueprint $table) {
+            $table->unique('title');
+        });
+}
+
+So dropUnique get first the table "news" then the column "title" and then the unique key "unique" all in all "news_title_unique".
+
+----
+
 141. Visual Studio Code auto format/indent
 
 I do not know how often I have googled this. So it is time to write it down.
