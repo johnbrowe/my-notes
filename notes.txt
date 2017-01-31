@@ -1,4 +1,27 @@
-﻿143. MySQL drop column
+﻿145. Copy/paste in Nano
+To copy in the Nano editor set cursor on the wanted line and press:
+ALT + 6
+
+To paste the text press:
+CTRL + u
+
+----
+
+144. UTF-8 encoding in PHP
+
+According to the Podcast PHP Roundtable the best encoding to MySQL is utf8mb4 as this supports all the UTF-8 characters.
+* Remember to use <meta charset="utf-8"> in HTML head. 
+* In a form you can use <form enctype="text/plain; charset=utf-8">.
+* In HTTP use Content-Type: text/html; charset=utf-8. 
+* Always use <meta> and a Content-Type header.
+
+Link: https://www.phproundtable.com/episode/character-encoding-and-utf-8-in-php
+
+Very good episode.
+
+----
+
+143. MySQL drop column
 
 Better write this down as I have googled it 2 times today. 
 Just a MySQL query to i forget once in a while
