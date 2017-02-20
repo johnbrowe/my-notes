@@ -1,4 +1,32 @@
-﻿145. Copy/paste in Nano
+﻿
+Change Vue state from console
+
+
+You can just call the instance with $vm + instance number. The number will also be referenced in the developer tool on the right from the component.
+
+Example:
+```
+new Vue({
+    el: "#one"
+    data: {
+        name: "john"
+    }
+}); 
+
+new Vue({
+    el: "#two"
+    data: {
+        name: "sara"
+    }
+}); 
+
+$vm0.name // john
+$vm1.name // sara
+```
+----
+
+Copy/paste in Nano
+
 To copy in the Nano editor set cursor on the wanted line and press:
 ALT + 6
 
@@ -24,10 +52,10 @@ Very good episode.
 143. MySQL drop column
 
 Better write this down as I have googled it 2 times today. 
-Just a MySQL query to i forget once in a while
-
+Just a MySQL query to i forget once in a while:
+```sql
 ALTER TABLE db_name.table_name DROP COLUMN status;
-
+```
 ----
 
 142. Laravel Drop Unique Index
@@ -35,6 +63,7 @@ ALTER TABLE db_name.table_name DROP COLUMN status;
 I was trying to drop an unique index via php artisan migrate but got an error which said I could not drop the column  i was trying to remove the unique key from.
 
 This is the failing code:
+```php
 public function up()
 {
 	Schema::table('news', function (Blueprint $table) {
@@ -48,10 +77,13 @@ public function down()
             $table->unique('title');
         });
 }
+````
 
 The problem was I that dropUnique needs a full path/name for the index.
 
 Working example:
+
+```php
 public function up()
 {
 	Schema::table('news', function (Blueprint $table) {
@@ -65,6 +97,7 @@ public function down()
             $table->unique('title');
         });
 }
+```
 
 So dropUnique get first the table "news" then the column "title" and then the unique key "unique" all in all "news_title_unique".
 
@@ -74,9 +107,9 @@ So dropUnique get first the table "news" then the column "title" and then the un
 
 I do not know how often I have googled this. So it is time to write it down.
 
-Windows: SHIFT + ALT + F
-Mac: SHIFT + OPTION + F
-Ubuntu: CTRL + SHIFT + I
+* Windows: SHIFT + ALT + F
+* Mac: SHIFT + OPTION + F
+* Ubuntu: CTRL + SHIFT + I
 
 ----
 
@@ -2238,6 +2271,7 @@ Link: http://tutsnare.com/post-data-using-ajax-in-laravel-5/
 If you want to change host file in Ubuntu, you can open the terminal and do the following.
 
 To get to the root press.
+
 $ cd / 
 $ cd etc
 $ sudo nano hosts
@@ -2246,37 +2280,43 @@ Then just change the file as you want, and press O then enter and then X.
 
 ----
 
-7. Cut(limit string length) string in PHP
+Cut(limit string length) string in PHP
+
 As I am usually using blade and other framworks the vanilla PHP templating is not always so sharp.
 Here are two functions to cut string.
-
+```php
 echo mb_strimwidth("Hello World", 0, 10, "...");
+```
 or 
+```
 $string = substr($string,0,10).'...';
-
+```
 ----
 
-6. Accessing illegal name properties from PHP Objects
+Accessing illegal name properties from PHP Objects
 
 I quite a long time to figure this one out.
 
 I had a json decoded object where the object keys had some illegal characters "this-is-the-illegal-string".
 
 This mean that the usual way will not work.
-
+```php
 $array = ['hello' => 'John', 'hello-world' => 'John'];
 $objext = (object)$array;
 echo $object->['hello-world']; // This does not work
+```
 
 The solution is to use curly braces
+```php
 echo $object->{'hello-world'}; // This works
-
+```
 ----
 
-5. Express params
+Express params
 
 I just started using Express and had some problems on how to use params to display pages "blog" pages.
 
+```js
 app.get('/notes/:note', function(req, res){
 
     var notes = require(__dirname + '/pages/content/notes.json');
@@ -2284,6 +2324,7 @@ app.get('/notes/:note', function(req, res){
     res.render(__dirname + '/pages/note', { note: note. [req.params.note]});	
 
 });
+```
 
 You will notice that I use the :note after the path /notes/:note
 
@@ -2296,22 +2337,24 @@ then you would use req.param.bla to get the value.
 
 ----
 
-4. Relative CSS link
+Relative CSS link
 
 I typical mistake is to make CSS links relative by not using / at the start of the link.
 
-    <link href='css/main.css' rel='stylesheet' type='text/css'>
+```html
+<link href='css/main.css' rel='stylesheet' type='text/css'>
+```
 
-it should instead be
-
-    <link href='/css/main.css' rel='stylesheet' type='text/css'>
-
+It should instead be:
+```html
+<link href='/css/main.css' rel='stylesheet' type='text/css'>
+```
 
 Write more about this..........
 
 ----
 
-3. Wordpress WYSIWYG not showing
+Wordpress WYSIWYG not showing
 
 The WP WYSIWYG just disappeared out of no where for me.
 
@@ -2328,7 +2371,7 @@ This worked for me
 
 ----
 
-2. Element disappeared on float
+Element disappeared on float
 
 First problem was that i had set ul to float left, and when i figured out to set li to float it still disappeared.
 
@@ -2338,14 +2381,11 @@ http://stackoverflow.com/questions/19775657/div-background-hide-when-i-use-float
 
 ----
 
-1. WP child page menu
+WP child page menu
 
 Here is a great video about how to create a child page menu.
 
 I did not use the array_reverse function.
 
 https://www.youtube.com/watch?v=GHTZn3atTcM
-
-----
-
 
