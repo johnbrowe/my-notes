@@ -1,6 +1,25 @@
-﻿
-Change Vue state from console
+Mac OSX system path not working
 
+I was trying to add a new path to the systems path via both /etc/paths and .bash_profile but the terminal would not get it on echo $PATH.
+
+The problem was that I am using a shell called Fish which means that you have to set the systems path another place.
+
+Here is how  I solved it.
+
+Create new fish config file:
+$ touch ~/.config/fish/config.fish
+
+Open config file:
+$ nano ~/.config/fish/config.fish
+
+Insert path to file:
+§ echo set -gx PATH \$PATH <path> 
+
+Then CTRL + X and yes to save, then restart terminal and you a good to go.
+
+----
+
+Change Vue state from console
 
 You can just call the instance with $vm + instance number. The number will also be referenced in the developer tool on the right from the component.
 
@@ -23,6 +42,7 @@ new Vue({
 $vm0.name // john
 $vm1.name // sara
 ```
+
 ----
 
 Copy/paste in Nano
@@ -35,7 +55,7 @@ CTRL + u
 
 ----
 
-144. UTF-8 encoding in PHP
+UTF-8 encoding in PHP
 
 According to the Podcast PHP Roundtable the best encoding to MySQL is utf8mb4 as this supports all the UTF-8 characters.
 * Remember to use <meta charset="utf-8"> in HTML head. 
@@ -49,7 +69,7 @@ Very good episode.
 
 ----
 
-143. MySQL drop column
+MySQL drop column
 
 Better write this down as I have googled it 2 times today. 
 Just a MySQL query to i forget once in a while:
@@ -58,7 +78,7 @@ ALTER TABLE db_name.table_name DROP COLUMN status;
 ```
 ----
 
-142. Laravel Drop Unique Index
+Laravel Drop Unique Index
 
 I was trying to drop an unique index via php artisan migrate but got an error which said I could not drop the column  i was trying to remove the unique key from.
 
@@ -103,7 +123,7 @@ So dropUnique get first the table "news" then the column "title" and then the un
 
 ----
 
-141. Visual Studio Code auto format/indent
+Visual Studio Code auto format/indent
 
 I do not know how often I have googled this. So it is time to write it down.
 
@@ -113,7 +133,7 @@ I do not know how often I have googled this. So it is time to write it down.
 
 ----
 
-140. Gitignore added folders
+Gitignore added folders
 
 I always forget how to gitignore cached/added folders such as node_modules.
 
@@ -128,7 +148,7 @@ git rm -r --cached node_modules
 
 ----
 
-﻿138. CSS Responsive embedable
+CSS Responsive embedable
 
 It can be difficult to work with responsive iframes and other embedable stuff. Here is a little snippet which could possible help.
 
@@ -167,17 +187,13 @@ It can be difficult to work with responsive iframes and other embedable stuff. H
 }
 
 
-
 <div class="embed-wrapper">
 	<iframe class="embed" src="..."></iframe>
 </div>
 
-
-
-
 ----
 
-137. Install fish on Ubuntu
+Install fish on Ubuntu
 
 Fish makes your terminal life alot easier. Here is a easy way to install it.
 sudo apt-add-repository ppa:fish-shell/release-2
@@ -191,7 +207,7 @@ Link: https://hackercodex.com/guide/install-fish-shell-mac-ubuntu/
 
 ----
 
-136. Optional Callback in JavaScript
+Optional Callback in JavaScript
 
 Sometimes you need a callback to be optional. 
 function crush(material, cb){
@@ -214,7 +230,7 @@ http://codepen.io/johnbrowe/pen/oBbVwO?editors=1111
 
 ----
 
-135. Undefined offset: 0
+Undefined offset: 0
 
 Once in a while you get a exception like this one.
 
@@ -236,7 +252,7 @@ So just go through your view file at figure out where you are trying to access a
 
 ----
 
-134. Browser-sync proxy
+Browser-sync proxy
 
 When starting browser-sync i often forget this command.
 
@@ -245,7 +261,7 @@ browser-sync start --proxy 'johnjohn.app'
 
 ----
 
-133. Make HTML Object tag clickable
+Make HTML Object tag clickable
 
 If had this HTML lined up:
 <a id="btn">
@@ -265,7 +281,7 @@ object{
 
 ----
 
-132. MySQL Workbench on Windows 10
+MySQL Workbench on Windows 10
 
 I am not sure why but I could not get MySQL Workbench to work on my computer.
 
@@ -273,7 +289,7 @@ After some research I figured out to try installing 32-bit instead of 64-bit and
 
 ----
 
-131. Install NVM on Ubuntu
+Install NVM on Ubuntu
 
 This is by far the best article on installing Node, especially Node Version Manager:
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
@@ -291,7 +307,7 @@ Click Restart Now
 
 ----
 
-129. Update Node and NPM verions
+Update Node and NPM verions
 
 sudo npm cache clean -f
 sudo npm install -g n
@@ -304,12 +320,9 @@ In my case: sudo ln -sf /usr/local/n/versions/node/7.0.0/bin/node /usr/bin/node
 You can always use this command to see what the folder is called:
 ls /usr/local/n/versions/node/
 
-
 ----
 
-----
-
-130. Connecting to MongoDB Debian VM
+Connecting to MongoDB Debian VM
 
 Working on a new project I needed to connect to at MongoDB instance on a Debian virtual machine.
 
@@ -336,7 +349,7 @@ sudo lsof -iTCP -sTCP:LISTEN | grep mongo
 
 ----
 
-129. Force quit application in Ubuntu
+Force quit application in Ubuntu
 
 Write command "top" to get a list of running processes.
 
@@ -347,7 +360,7 @@ Write command "kill pid"
 
 ----
 
-128. Instant Server for Current Directory
+Instant Server for Current Directory
 
 A nice way to quickly create at server for quick testing.
 
@@ -365,7 +378,7 @@ And website is served.
 
 ----
 
-127. Online developer tools to remember
+Online developer tools to remember
 
 These are my favorite online tools at the moment:
 https://hyperdev.com/
@@ -375,7 +388,7 @@ http://codepen.io/
 
 ----
 
-126. Permission denied public key to github
+Permission denied public key to github
 
 I tried to git clone my repository to my Ubuntu machine.
 
@@ -394,7 +407,7 @@ sudo git clone https://github.com/johnbrowe/gomagott.git
 
 ----
 
-125. Search in Nano Editor
+Search in Nano Editor
 
 I always forget the command to search within Nano so here it is:
 
@@ -405,7 +418,7 @@ Repeat search: ALT + W (Arrow up/down)
 
 ----
 
-124. Font not displayed in PDF
+Font not displayed in PDF
 
 After a deploy the on my PDF app, the PDF file was not using the right font.
 
@@ -416,7 +429,7 @@ But I copied it back over to the fonts folder from my backup and it works again.
 
 ----
 
-123. Remove column from table
+Remove column from table
 
 Here is how you delete a column:
 ALTER TABLE table_name DROP COLUMN column_name;
@@ -426,7 +439,7 @@ ALTER TABLE homestead.users DROP COLUMN avatar;
 
 ----
 
-122. Create migration file Laravel
+Create migration file Laravel
 
 I always forget the command to create a new migration file in Larvel.
 
@@ -437,7 +450,7 @@ Link: https://laravel.com/docs/5.3/migrations
 
 ----
 
-121. Change ownership of folder
+Change ownership of folder
 
 The folder in my local apache had the root ownership meaning I could not edit the file without using sudo.
 
@@ -450,7 +463,7 @@ After this I was able to edit without sudo permissions.
 
 ----
 
-120. Font-weight not working on Wkhtmltopdf Ubuntu 16.04
+Font-weight not working on Wkhtmltopdf Ubuntu 16.04
 
 After setting my app up in a new server, all my thin and bold fonts where rendering as normal.
 
@@ -465,7 +478,7 @@ Still not sure why this suddently changed, and I am too tired to look more into 
 
 ----
 
-119. See list of available fonts Ubuntu
+See list of available fonts Ubuntu
 
 This command is a good way to see which fonts are available and how they are named.
 $ fc-list
@@ -473,7 +486,7 @@ $ fc-list
 
 ----
 
-118. All input not showing on submit
+All input not showing on submit
 
 I got a bug on on of my web apps as newly created products where not being sent when I submitted the form.
 
@@ -516,7 +529,7 @@ Now it should work
 
 ----
 
-117. Install Node on Ubuntu
+Install Node on Ubuntu
 
 After installing apt-get install nodejs.
 
@@ -531,9 +544,9 @@ Also remove nodejs so you can install it again.
 Then you can install nodejs again and this time it will react on "node" command
 * sudo apt-get install nodejs
 
-﻿----
+----
 
-116. Transition with height/width auto
+Transition with height/width auto
 
 Working with transitions is usually very easy. But i had at problem where the transition just would not work.
 
@@ -555,10 +568,9 @@ My code:
 
 Link: https://jdsteinbach.com/css/holy-grail-css-animation/
 
-
 ----
 
-115. Add element after another
+Add element after another
 
 I was quite impressed by this JS function insertAdjacentHTML.
 
@@ -583,7 +595,7 @@ Quite clean and easy to use. There also other options such as:
 
 ----
 
-114. SSH to Homestead with Navicat
+SSH to Homestead with Navicat
 
 I had some problems with opening a connection to Navicat through SSH.
 
@@ -607,10 +619,9 @@ Port: 3306
 User Name: homestead
 password: secret
 
-
 ----
 
-113. My first extension Chrome extension
+My first extension Chrome extension
 
 I have always wondered how a Chrome extension works.
 Now I know.
