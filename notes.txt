@@ -1,19 +1,47 @@
+PHP Fatal error: cannot redeclare class
+
+You can only have one class with the same class name.
+
+I had copy/pasted a test and had forgotten to change the name of the class which means there where files/classes with the same name. 
+
+-----
+
+Mocking a collection Laravel
+
+Cool way to mock an Eleqount query without relying on the DB.
+
+```
+$tickets = collect([
+    (object) ['price' => 1200],
+    (object) ['price' => 1200],
+    (object) ['price' => 1200],
+]);
+```
+
+Fun fact:
+All collections items you get when you are using the query builder are instances of PHP stdClass.
+
+----
+
 Mac OSX system path not working
 
 I was trying to add a new path to the systems path via both /etc/paths and .bash_profile but the terminal would not get it on echo $PATH.
 
 The problem was that I am using a shell called Fish which means that you have to set the systems path another place.
 
-Here is how  I solved it.
+Here is how  I solved it
 
 Create new fish config file:
-$ touch ~/.config/fish/config.fish
+**$ touch ~/.config/fish/config.fish**
+
 
 Open config file:
-$ nano ~/.config/fish/config.fish
+**$ nano ~/.config/fish/config.fish**
+
 
 Insert path to file:
-§ echo set -gx PATH \$PATH <path> 
+**§ echo set -gx PATH \$PATH <path>** 
+
 
 Then CTRL + X and yes to save, then restart terminal and you a good to go.
 
@@ -58,10 +86,10 @@ CTRL + u
 UTF-8 encoding in PHP
 
 According to the Podcast PHP Roundtable the best encoding to MySQL is utf8mb4 as this supports all the UTF-8 characters.
-* Remember to use <meta charset="utf-8"> in HTML head. 
-* In a form you can use <form enctype="text/plain; charset=utf-8">.
+* Remember to use `<meta charset="utf-8">` in HTML head. 
+* In a form you can use `<form enctype="text/plain; charset=utf-8">`.
 * In HTTP use Content-Type: text/html; charset=utf-8. 
-* Always use <meta> and a Content-Type header.
+* Always use `<meta>` and a Content-Type header.
 
 Link: https://www.phproundtable.com/episode/character-encoding-and-utf-8-in-php
 
