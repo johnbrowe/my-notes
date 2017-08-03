@@ -1,3 +1,38 @@
+-----
+
+Module build failed by something buble
+
+I got this error while using elixir webpack:
+`{ [Error: ./resources/assets/js/modules/name-of-file.js
+Module build failed: Error
+    at Scope.addDeclaration (.../node_modules/buble/dist/buble.umd.js:9264:13)
+    at Node.initialise (.../node_modules/buble/dist/buble.umd.js:9133:23)``
+
+After a while i tried to install a plugin related to the buble.umd:
+`npm install --save-dev buble-loader buble`
+
+I ran gulp after the install and now i got a prettier error message:
+`{ [Error: ./resources/assets/js/modules/name-of-file.js
+Module build failed:
+192 :     },
+193 :
+194 :     // Some comment
+195 :     restDivide: function (amount) {
+196 :         let amount = new Decimal(amount);`
+
+Meaning I was redeclaring amount to a let variable which of course is i dumb error :).
+
+-----
+
+Datatables jQuery plugin 
+
+Interesting plugin to make my table more interactive.
+
+
+https://datatables.net/
+
+
+-----
 PHP Fatal error: cannot redeclare class
 
 You can only have one class with the same class name.
@@ -18,7 +53,6 @@ $tickets = collect([
 ]);
 ```
 
-Fun fact:
 All collections items you get when you are using the query builder are instances of PHP stdClass.
 
 ----
