@@ -1,4 +1,25 @@
 -----
+Date: 13-02-2018
+Laravel testing date:before fails
+
+Problem: Test fails whatever i do.
+
+Why: Controller test is using `Carbon::setTestNow` and Laravel validation `before` is using strtotime which of course not effected by Carbon time.
+
+Solution: Do not use `Carbon::setTestNow` along with strtotime function.
+
+-----
+Date: 12-02-2018
+Vue devtool overwrites console.logs
+
+Vanillajs console.logs can be overwritten by Vue Devtools, so have that in mind when debugging vanillajs code beside Vue.
+
+-----
+Update specific repo
+
+composer update johnbrowe/repo --no-scripts
+
+-----
 
 Module build failed by something buble
 
@@ -31,8 +52,8 @@ Interesting plugin to make my table more interactive.
 
 https://datatables.net/
 
-
 -----
+
 PHP Fatal error: cannot redeclare class
 
 You can only have one class with the same class name.
