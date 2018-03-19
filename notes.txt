@@ -1,4 +1,48 @@
 -----
+Date: 19-03-2018
+
+Laravel get query string from builder
+
+`$query = self::belongsToDelivery($some)
+            ->whereNull('deleted_at')
+            ->orderBy('date', 'desc');
+
+// Dump query string
+dump($query->toSql());            
+`
+
+-----
+Date: 13-03-2018
+
+Difference between = and <=> in MySQL
+
+With <=> operator NULL is like any other value, and has no special meaning.
+
+`'a' <=> 'b'`   returns 0
+`'a' <=> 'a'`   returns 1
+`NULL = NULL`   returns NULL
+`NULL <=> NULL` returns 1
+`'a' <=> NULL`  returns NULL
+
+-----
+Date: 13-02-2018
+
+I always forget how the `?:` works 
+
+When I read code this once in a while shows up, and I always forget what it means. So hopefully writing it down helps.
+
+`
+// Ternary operator
+$date = "13-02-2018";
+$variable = $date ? $date : 'no date');
+echo $variable; // "13-02-2018"
+
+// The shorthand version
+$variable = $date ?: 'no date');
+echo $variable; // "13-02-2018"
+`
+
+-----
 Date: 13-02-2018
 Laravel testing date:before fails
 
