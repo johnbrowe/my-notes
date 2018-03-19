@@ -11,6 +11,9 @@ Laravel get query string from builder
 dump($query->toSql());            
 `
 
+Another option is:
+`$query->getBindings()`
+
 -----
 Date: 13-03-2018
 
