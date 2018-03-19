@@ -3,7 +3,7 @@ Date: 19-03-2018
 
 Laravel get query string from builder
 
-`$query = self::belongsToDelivery($some)
+`$query = self::belongsToPerson($some)
             ->whereNull('deleted_at')
             ->orderBy('date', 'desc');
 
