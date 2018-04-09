@@ -1,4 +1,32 @@
 -----
+Date: 09-04-2018
+
+Get all cases where a column has the same value 
+
+```
+select id, COUNT(*)
+from VALUE
+group by VALUE
+having count(1) > 1
+```
+
+Tags: MySQL
+
+-----
+Date: 09-04-2018
+
+Run on one test Jest
+
+
+If I only run one test then use:
+
+`describe.only`
+`it.only`
+
+
+Tags: JS, test
+
+-----
 Date: 19-03-2018
 
 Laravel get query string from builder
