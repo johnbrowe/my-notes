@@ -1,4 +1,68 @@
 -----
+Date: 01-06-2018
+
+Remember the planning fallacy
+
+This is just a reminder that my estimates always are off.
+
+I listen to a podcast on Freakonomics on planning, and usually we are off by 60%
+
+all depending on what mood we are in, and how stressed we are.
+
+When we are more stressed we have a tendency to be more accurate, and the other way around when we are relaxed. 
+
+Link: http://freakonomics.com/podcast/project-management/
+
+-----
+Date: 31-05-2018
+
+Animation libs
+
+I have bumped into some awesome animations libraries.
+
+* mo.js
+* popmotion
+* popmotion pose
+* React motion
+
+-----
+Date: 23-05-2018
+
+Sometimes you need to send an empty commit, most often en some other service needs to read the commit.
+
+`git commit --allow-empty -m "Some random message"`
+
+-----
+Date: 22-05-2018
+
+Weird white space can be fixed with white-space property
+
+The white-space tag can help with how whitespace inside an element is handled.
+
+```
+white-space: normal;
+white-space: nowrap;
+white-space: pre;
+white-space: pre-wrap;
+white-space: pre-line; 
+```
+
+When you use pre-line and other which preserve whitespace. Be sure to format space correctly.
+
+```
+<p>
+
+  log
+</p>
+<!-- output: /n log --> 
+
+<p>log</p>
+<!-- output: log --> 
+
+```
+
+ 
+-----
 Date: 09-04-2018
 
 Get all cases where a column has the same value 
@@ -561,7 +625,7 @@ Which was very strange because I had inserted my public key in the Github settin
 
 My workaround was to use the URL instead of the git@github.com
 
-sudo git clone https://github.com/johnbrowe/gomagott.git
+sudo git clone https://github.com/user/repo.git
 
 ----
 
@@ -1516,7 +1580,7 @@ Copye autoprefixed code and paste where ever you need it.
 
 67. Xdebug and Homestead
 
-XDebug is fantastic but it is hard to get working.
+XDebug is fantastic but it is hard setup.
 
 Just a note last time my problem was absolute path.
 
@@ -1593,7 +1657,7 @@ https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase
 
 ----
 
-64. Wordpress Migration Plugins
+Wordpress Migration Plugins
 
 I mainly use this plugin, if I do not have a CPanel or MySQL GUI.
 
@@ -1604,7 +1668,7 @@ https://wordpress.org/plugins/duplicator/
 
 ----
 
-63. Could not ssh into server
+Could not ssh into server
 
 I had forgotten all my credentials to a remote server, which I really wanted to log in to. It was a digitalocean server so I could just login to my account and reset the password.
 
@@ -1631,7 +1695,7 @@ Link: http://askubuntu.com/questions/497895/permission-denied-for-rootlocalhost-
 
 ----
 
-62. Wordpress removing subfolder from URL
+Wordpress removing subfolder from URL
 
 I used this link: 
 
@@ -1639,7 +1703,7 @@ http://www.wpbeginner.com/wp-tutorials/how-to-get-rid-of-wordpress-from-your-wor
 
 ----
 
-61. Installing New Relic Node
+Installing New Relic Node
 
 Here is a good video:
 
@@ -1647,7 +1711,7 @@ https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/in
 
 ----
 
-60. Node forever
+Node forever
 
 npm install forver -g
 
@@ -1662,7 +1726,7 @@ forever stop index.js
 
 ----
 
-59. Kill Node process
+Kill Node process
 
 Usually when you want to quit a node server you press CTRL + C or CTRL + Z.
 
@@ -1704,7 +1768,7 @@ and then you are good to go.
 
 ----
 
-58. Bash commands
+Bash commands
 
 create directory:
 mkdir foldername
@@ -1734,7 +1798,7 @@ https://www.quora.com/What-are-some-of-the-best-command-prompt-or-terminal-trick
 
 ----
 
-57. Enviroment Variables in Node
+Enviroment Variables in Node
 
 Here is a fine tut on enviroment variables in Node:
 
@@ -1742,7 +1806,7 @@ https://sendgrid.com/blog/node-environment-variables/
 
 ----
 
-56. SSH - Host key verification failed.
+SSH - Host key verification failed.
 
 I had just started a new droplet on Digitalocean with an SSH key, but I could not ssh. I keept getting this error.
 
@@ -2404,7 +2468,7 @@ Now the connection should be gone.
 
 ----
 
-10. Change Shopify Checkout style
+Change Shopify Checkout style
 
 I was helping a friend with his Shopify page where I had the problem of not being able to change the style of the checkout page.
 
@@ -2421,7 +2485,7 @@ Link: https://ecommerce.shopify.com/c/ecommerce-design/t/hide-parts-of-the-check
 
 ----
 
-9. 500 error in Laravel 5 form
+500 error in Laravel 5 form
 
 When you are using Laravel 5, the form helper is not there by default.
 
@@ -2436,7 +2500,7 @@ Link: http://tutsnare.com/post-data-using-ajax-in-laravel-5/
 
 ----
 
-8. Changing Hosts file Ubuntu
+Changing Hosts file Ubuntu
 If you want to change host file in Ubuntu, you can open the terminal and do the following.
 
 To get to the root press.
