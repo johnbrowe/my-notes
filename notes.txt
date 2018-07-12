@@ -1,4 +1,59 @@
 -----
+Date: 12-07-2018
+
+Your requirements could not be resolved to an installable set of packages
+
+I was trying to point composer.json file to two specific feature branches.
+
+"require": {
+        "someuser/somepackage1": "dev-feature/a-specific-branch1",
+        "someuser/somepackage2": "dev-master",
+	"someuser/somepackage3": "dev-feature/a-specific-branch3",
+	...
+}
+
+The config ended up in a composer error when running this command:
+
+`composer update someuser/somepackage1`
+
+
+Error:
+```
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - Can only install one of: someuser/somepackage3[dev-feature/a-specific-branch3, dev-master].
+    - Can only install one of: someuser/somepackage3[dev-master, dev-feature/a-specific-branch3].
+    - Can only install one of: someuser/somepackage3[dev-master, dev-feature/a-specific-branch3].
+    - Installation request for someuser/somepackage3 dev-feature/a-specific-branch3 -> satisfiable by someuser/somepackage3[dev-feature/a-specific-branch3].
+    - Installation request for someuser/somepackage3 (locked at dev-master, required as dev-feature/a-specific-branch3) -> satisfiable by someuser/somepackage3[dev-master].
+```
+
+This happened because composer can only handle one change at the time.
+
+So i first run the `composer update someuser/somepackage1` command on:
+
+"require": {
+        "someuser/somepackage1": "dev-feature/a-specific-branch1",
+        "someuser/somepackage2": "dev-master",
+	"someuser/somepackage3": "dev-master",
+	...
+} 
+
+Then i can change the config to:
+
+"require": {
+        "someuser/somepackage1": "dev-feature/a-specific-branch1",
+        "someuser/somepackage2": "dev-master",
+	"someuser/somepackage3": "dev-feature/a-specific-branch3",
+	...
+}
+
+And run `composer update someuser/somepackage3`.
+
+
+
+-----
 Date: 01-06-2018
 
 Remember the planning fallacy
