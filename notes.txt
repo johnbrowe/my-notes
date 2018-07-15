@@ -1,4 +1,130 @@
 -----
+Date: 15-07-2018
+
+Chrome devtools tricks
+
+Break on
+Right click on an element in the Elements tab, and go to Break on -> attribute modifications
+
+This will open up the debugger command where the code which changes the element is executed.
+
+Interpolate
+```
+console.log('Hey %s', 'John');
+// Hey John
+```
+
+Style
+```
+console.log('%c Hey John', 'color: green; font-size: 30px;');
+// Log will be green and have big text
+``` 
+
+Warning
+````
+console.warn('Small mistake'); 
+// This will output stacktrace
+```
+
+Error
+````
+console.error('Big mistake'); 
+// This will output stacktrace
+```
+
+Info 
+```
+console.error('Big mistake'); 
+// Gives an icon indication that it is only info 
+```
+
+Info 
+```
+console.error('Big mistake'); 
+// Gives an icon indication that it is only info 
+```
+
+Assert
+```
+console.assert(1 === 2, 'Wrong'); 
+// Only logs if the assertion is wrong 
+```
+
+View dom element
+```
+const body = document.querySelector('body');
+console.log(body); 
+// This will display the actual element
+
+console.dir(body); 
+// This will display the DOM (object) 
+```
+
+Group
+```
+console.group('We are a Roman legion');
+console.log('500 men');
+console.log('500 men');
+console.log('500 men');
+console.groupEnd('We are a Roman legion');
+```
+
+Group collapsed
+```
+console.groupCollapsed('We are a Roman legion');
+console.log('500 men');
+console.log('500 men');
+console.log('500 men');
+console.groupEnd('We are a Roman legion');
+```
+
+Count
+```
+console.count('John')
+console.count('John')
+console.count('Sára')
+console.count('John')
+console.count('John')
+console.count('John')
+// John: 1
+// John: 2
+// Sára: 1
+// John: 3
+// John: 4
+// John: 5
+```
+
+Timing
+```
+console.time('Fetch johnbrowe');
+fetch('https://api.github.com/users/johnbrowe')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('Fetch johnbrowe');
+      console.log(data);
+    });
+
+// Fetch johnbrowe: 455.06201171875ms
+// {login: "johnbrowe", id: 4990 .....
+```
+
+Table
+```
+const sevenKingsOfRome = [
+  { 'name': 'Romulus' },
+  { 'name': 'Numa Pompilius' },
+  { 'name': 'Tullus Hostilius' },
+  { 'name': 'Ancus Marcius' },
+  { 'name': 'Lucius Tarquinius Priscus' },
+  { 'name': 'Servius Tullius' },
+  { 'name': 'Lucius Tarquinius Superbus' },
+];
+
+console.table(sevenKingsOfRome);
+// Displays a nice table
+
+```
+-----
 Date: 12-07-2018
 
 Your requirements could not be resolved to an installable set of packages
@@ -52,6 +178,7 @@ Then i can change the config to:
 And run `composer update someuser/somepackage3`.
 
 
+Tags: Composer, Git
 
 -----
 Date: 01-06-2018
@@ -60,7 +187,7 @@ Remember the planning fallacy
 
 This is just a reminder that my estimates always are off.
 
-I listen to a podcast on Freakonomics on planning, and usually we are off by 60%
+I listened to a podcast on Freakonomics on planning, and usually we are off by 60%
 
 all depending on what mood we are in, and how stressed we are.
 
