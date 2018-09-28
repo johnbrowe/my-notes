@@ -1,3 +1,101 @@
+----
+Date:28-09-2018
+
+React refers to a UMD global
+
+I get this error:
+`'React' refers to a UMD global, but the current file is a module. Consider adding an import instead.`
+
+Solution: 
+`import * as React from 'react'`
+
+
+----
+Date: 15-09-2018
+
+Laravel ERROR: No application encryption key has been specified.
+
+This is because we are missing encryption key.
+
+Use command `php artisan key:generate` in application root.
+
+If you don't have a .env file it will complain with error:
+
+ErrorException  : file_get_contents(/var/www/.env): failed to open stream: No such file or directory
+
+So just do `touch .env` and try again. 
+
+----
+Date: 15-09-2018
+
+How to handle multiple GitHub accounts
+
+Here's a good link:
+https://gist.github.com/jexchan/2351996
+
+Look at the comment {jmpnot commented on May 6, 2013} as well to get it working.
+----
+Date: 11-09-2018
+
+While trying to use npm install *openzwave-shared* I got this error:
+`Package libopenzwave was not found in the pkg-config search path`
+
+I had previously installed open-zwave package via brew but it would not work.
+
+So I deleted it again `brew uninstall open-zwave`
+
+And then I installed it manually.
+ 
+```
+cd /tmp
+curl -O http://old.openzwave.com/downloads/openzwave-1.4.0.tar.gz 
+tar -xzvf openzwave-1.4.0.tar.gz
+cd openzwave-1.4.0
+make
+sudo make install
+```
+
+And got it working.
+
+----
+Date: 11-09-2018
+
+Use Fish as default in ITerm
+
+`sudo nano /etc/shells`
+
+Add `/usr/local/bin/fish` to the top of the file and save
+
+Example:
+```
+/usr/local/bin/fish
+/bin/bash
+/bin/zsh
+
+```
+
+Then run command:
+`chsh -s /usr/local/bin/fish`
+
+Now it open a new tab and it should use fish instead of bash by default.
+
+Tags: fish, bash, iterm
+
+----
+Date: 05-09-2018
+
+Cannot redeclare block-scoped variable
+
+I got this error error TS2451: Cannot redeclare block-scoped variable.
+
+It was would not snap out of it eventhough there were no tslint errors.
+
+I ended up writing `export {}` in the bottom of the file and the error went away.
+
+Then I deleted the error and the error did not re-appear.
+
+Tags: Typescript
+
 -----
 Date: 15-07-2018
 
