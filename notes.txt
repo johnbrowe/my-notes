@@ -2902,3 +2902,60 @@ I did not use the array_reverse function.
 
 https://www.youtube.com/watch?v=GHTZn3atTcM
 
+----
+
+Date:28-09-2017
+
+Ecmascript 2015 JS Set
+
+*Set* is a collection of items that are unordered and consist of unique elements.
+
+Imagine *set* as an array with no repeated elements and with no concept of order.
+
+Tags: JavaScript, ES2015
+
+----
+
+Date:07-01-2016
+
+HTML5 Section element
+
+A *section* can contain *article*, and *article* can contain *section*
+
+
+Tags: HTML5
+
+----
+
+Date:07-01-2016
+
+HTML5 Figure element
+
+Use *figure* and figure caption to associate captions with images, charts, diagrams and code examples.  
+
+Tags: HTML5
+
+----
+
+Date:07-01-2016
+
+HTML5 Address element
+
+Address tag is not intended for describing an address. The purpose of the element is for marking up contact info for the author of the block element.  
+
+Tags: HTML5
+
+----
+
+Date:07-01-2016
+
+HTML5 Data element
+
+Data should be understandable both for humans and machines.
+
+`<data value="5">*****</data>`  
+
+Tags: HTML5
+
+----
+
