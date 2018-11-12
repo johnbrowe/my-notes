@@ -1,6 +1,21 @@
 ----
 Date: 12-11-2018
 
+The development server returned response error code: 500
+
+Got this error when running react-native run-android.
+
+Solution was to:
+1. Stop metro bundler in terminal `ctrl + C`
+2. Delete node_modules `rm -rf node_modules`
+3. Re-install modules `yarn`
+4. Rebuild `react-native run-android`
+
+Tags: React Native
+
+----
+Date: 12-11-2018
+
 React native maps compile error
 
 On react-native run-android I got this error.
@@ -52,6 +67,9 @@ allprojects {
 ```
 
 And try again, worked for me.
+
+Tags: React Native
+
 ----
 Date:28-09-2018
 
