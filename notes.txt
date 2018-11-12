@@ -1,4 +1,58 @@
 ----
+Date: 12-11-2018
+
+React native maps compile error
+
+On react-native run-android I got this error.
+
+> Task :react-native-maps:javaPreCompileDebug FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not resolve all files for configuration ':react-native-maps:debugCompileClasspath'.
+> Could not find support-core-utils.jar (com.android.support:support-core-utils:27.1.1).
+  Searched in the following locations:
+      https://jcenter.bintray.com/com/android/support/support-core-utils/27.1.1/support-core-utils-27.1.1.jar
+
+
+Solution:
+Go to file root-folder/android/build.gradle
+
+
+Move google to top of repositories object.
+```
+allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+ 	...       
+	}
+        google()
+        
+    }
+}
+
+```
+
+Like this:
+```
+allprojects {
+    repositories {
+	google()        
+	mavenLocal()
+        jcenter()
+        maven {
+ 	...       
+	}
+    }
+}
+
+```
+
+And try again, worked for me.
+----
 Date:28-09-2018
 
 React refers to a UMD global
