@@ -1,4 +1,18 @@
 ----
+Date: 05-11-2018
+
+Set variable fish
+
+Here is how: set -x key variable
+
+Example:
+`set -x TEST_NAME "My super test"`
+
+If you want to run a command afterwards:
+set -x TEST_NAME "My super test"; yarn test
+
+
+----
 Date: 12-11-2018
 
 The development server returned response error code: 500
