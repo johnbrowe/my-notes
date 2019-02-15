@@ -1,4 +1,38 @@
 ----
+Date: 15-02-2019
+
+Brew info
+
+While i was installing NVM (node version manager) with brew, 
+I could not get it to work. I could see that I had installed it
+by using `brew list`.
+
+But `nvm` in bash gave `bash: nvm: command not found`
+
+To debug this I used `brew info nvm` which gave some good info on how to make it work.
+
+```
+You should create NVM's working directory if it doesn't exist:
+
+  mkdir ~/.nvm
+
+Add the following to ~/.bash_profile or your desired shell
+configuration file:
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+You can set $NVM_DIR to any location, but leaving it unchanged from
+/usr/local/opt/nvm will destroy any nvm-installed Node installations
+upon upgrade/reinstall.
+
+Type `nvm help` for further information.
+```
+
+So good to rembembe to the `brew info` command.
+
+----
 Date: 05-11-2018
 
 Set variable fish
@@ -10,7 +44,6 @@ Example:
 
 If you want to run a command afterwards:
 set -x TEST_NAME "My super test"; yarn test
-
 
 ----
 Date: 12-11-2018
