@@ -1,4 +1,37 @@
 ----
+Date: 16-02-2019
+
+Setting up headless Raspberry Pi
+
+It was much easier than i thought.
+
+* Download noobs - Raspbian Stretch Lite
+  https://www.raspberrypi.org/downloads/raspbian/
+* Flash to SD card with etcher
+* Touch empty ssh file in /Volumes/boot folder
+* Touch wpa_supplicant.conf 
+* sudo nano wpa_supplicant.conf
+* add this text
+```
+country=fr
+update_config=1
+ctrl_interface=/var/run/wpa_supplicant
+
+network={
+ scan_ssid=1
+ ssid="wifiname"
+ psk="password"
+}
+```
+* Change to you network settings
+
+You are ready to boot Raspberry Pi 3
+
+I followed these tuts:
+https://www.youtube.com/watch?v=GOFZpstRXEU
+https://howtoraspberrypi.com/how-to-raspberry-pi-headless-setup/
+
+----
 Date: 15-02-2019
 
 Brew info
