@@ -1,4 +1,24 @@
 ----
+Date: 02-05-2019
+
+Set console logs in jest
+
+Jest would not output console.logs even though it says that it should be fixed in the newest version
+
+To get console.log output you need to set a environment variable
+
+In fish:
+```
+set -x Term "dumb"; jest
+```
+
+In bash:
+```
+TERM=dumb jest
+```
+
+
+----
 Date: 05-11-2018
 
 Set variable fish
