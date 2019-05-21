@@ -1,4 +1,14 @@
 ----
+Date: 21-5-2019
+
+Set timzone UTC command line mac
+
+Here is how.
+```
+sudo ln -sf /usr/share/zoneinfo/UTC /etc/localtime
+```
+
+----
 Date: 02-05-2019
 
 Set console logs in jest
