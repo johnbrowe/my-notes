@@ -1,4 +1,25 @@
 ----
+Date: 04-11-2019
+
+React Native - Error type 3
+
+Typically this error occurs when the app is not completely uninstalled.
+
+```
+Error type 3
+Error: Activity class {fo.techcare.app.android/fo.techcare.app.android.MainActivity} does not exist.
+```
+
+
+In my case I  have a work mode profile which means when I run `react-native run-android` it installs it twice. Both on private and work profile.
+
+To fix this go into apps and search for your app and uninstall all apps both private and work mode then run `react-native run-android` again. 
+
+It should work.
+
+
+Tags: React Native
+----
 Date: 21-5-2019
 
 Set timzone UTC command line mac
