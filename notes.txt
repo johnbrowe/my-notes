@@ -1,4 +1,32 @@
 ----
+Date: 22-11-2019
+
+Typescript error - Cannot use namespace 'Api' as a value.
+
+I got this Typescript error "Cannot use namespace 'Api' as a value"
+
+Api.d.ts
+```
+export enum State {
+	ok: "ok",
+	no: "no"
+}
+
+```
+
+Somefile
+```
+const someVariable = Api.State.ok
+```
+
+
+After looking at this for a while a figured out that I needed to restart build watch => `CTRL+c` and then `npm run watch` because does not re-read the Api.d.ts file
+
+
+
+Tags: Typescript
+
+----
 Date: 04-11-2019
 
 React Native - Error type 3
