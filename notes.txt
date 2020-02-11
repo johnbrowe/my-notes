@@ -1,4 +1,13 @@
 ----
+Date: 11-02-2020
+
+How to setup local SSL certicate video
+
+Here is a pretty good video explaining how to setup local development SSL certicate on a Mac.
+https://www.youtube.com/watch?v=C5M1B6bgLyo
+
+Tags: SSL, Mac
+----
 Date: 22-11-2019
 
 Typescript error - Cannot use namespace 'Api' as a value.
