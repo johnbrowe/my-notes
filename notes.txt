@@ -1,10 +1,20 @@
 ----
-Date: 11-02-2020
+Date: 27-03-2020
 
 How to setup local SSL certicate video
 
 Here is a pretty good video explaining how to setup local development SSL certicate on a Mac.
-https://www.youtube.com/watch?v=C5M1B6bgLyo
+https://www.youtube.com/watch?v=Wn2bZDWMwKc
+
+In my case starting this with create-react-app in needed to write
+$HTTPS=true npm start dev
+
+Also your .env must have this line
+HOST=your.url.fo 
+This must be the same as your common name 
+
+And of course your host file needs to have this line.
+127.0.0.1 your.url.fo
 
 Tags: SSL, Mac
 ----
