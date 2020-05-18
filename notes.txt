@@ -1,4 +1,27 @@
 ----
+Date: 18-05-2020
+
+Could not install app on Android
+
+I got this when I tried to install the app through Play Store:
+Android “You cannot install this app because another user has already installed an incompatible version on this device”
+
+And this error while building through react native "react-native run-android":
+```
+Starting: Intent { cmp=fo.techcare.app.android/.MainActivity }
+Error type 3
+Error: Activity class {fo.techcare.app.android/fo.techcare.app.android.MainActivity} does not exist.
+```
+
+There was no app to uninstall under settings so I had to do it via bash.
+`adb shell pm uninstall com.mypackage.app.android`
+
+Viola it can be installed again!
+
+Tags: Android, Mac, React Native
+----
+
+----
 Date: 27-03-2020
 
 How to setup local SSL certicate video
