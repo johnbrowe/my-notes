@@ -1,4 +1,50 @@
 ----
+Date: 29-05-2020
+
+react-native-push-notification IOS foreground not working
+
+Im using react-native-push-notification to handle notifications in my React Native app.
+
+```
+PushNotification.localNotification({...})
+```
+
+I had a hard time displaying notifications on IOS when in foreground.  Worked fine on Android.
+
+Solution were to make these changed:
+
+####AppDelegate.h
+```
+#import <UserNotifications/UserNotifications.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate, UNUserNotificationCenterDelegate>
+```
+
+
+####AppDelegate.m
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+  // ...
+
+  // define UNUserNotificationCenter
+  UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+  center.delegate = self;
+
+  return YES;
+}
+// Called when a notification is delivered to a foreground app.
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+}
+```
+
+Then everything worked fine with 
+
+Link: https://github.com/zo0r/react-native-push-notification/issues/275
+Tags: IOS, React Native
+
+----
 Date: 18-05-2020
 
 Could not install app on Android
