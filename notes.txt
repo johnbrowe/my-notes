@@ -1,4 +1,20 @@
 ----
+Date: 04-06-2020
+
+Stuck on Loading dependency graph, done. - IOS
+
+After updating my operating system and Xcode I was not able to build on a device with React Native. The build went fine, I got this: 
+
+** BUILD SUCCEEDED **
+info Installing and launching your app on John’s iPad
+
+But it would not build on my device it was stuck I only got Loading dependency graph, done. and the app started running but I never really opened and after a while I closed again.
+
+I tried everything! clean up project, resetting cache, downgrading Node version, upgrading cocoa pods but nothing worked.
+
+Then I figured it out! The device (iPad) and Mac had to be on the same network. That was all. Im not sure if I should cry or just be happy. Bye bye 1 day of frustration.
+
+----
 Date: 29-05-2020
 
 react-native-push-notification IOS foreground not working
