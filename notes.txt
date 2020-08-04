@@ -1,3 +1,18 @@
+
+----
+Date: 04-08-2020
+
+Android emulator no internet MAC
+
+I had an annoying problem with the Android emulator no having any internet. It was fixed by going to Settings > Network > Advanced then choose the DNS tab delete any entries and add these:
+8.8.8.8
+8.8.4.4 
+Then restart emulator.
+
+The stackoverflow link below also has a solution for Windows.
+
+https://stackoverflow.com/questions/50670547/android-studio-android-emulator-wifi-connected-with-no-internet?rq=1
+
 ----
 Date: 04-06-2020
 
