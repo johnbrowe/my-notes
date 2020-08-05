@@ -1,5 +1,24 @@
 
 ----
+Date: 05-08-2020
+
+React Native Debug APK
+
+Create/generate APK without metroserver 
+
+```
+$ yarn start
+$ mkdir -p android/app/src/main/assets
+$ react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+$ curl "http://localhost:8081/index.bundle?platform=android" -o "android/app/src/main/assets/index.android.bundle"
+$ cd android
+$ ./gradlew clean assembleDebug
+```
+
+Generated APK is in <project>/android/app/build/outputs/apk/debug 
+
+
+----
 Date: 04-08-2020
 
 Android emulator no internet MAC
