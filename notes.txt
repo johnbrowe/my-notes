@@ -3,6 +3,11 @@ Date: 18-08-2020
 
 React Native App stopped working after  package added  App stopped working after installing react-native-device-info  I tried to figure out what went wrong in logcat as well as looking through the repo readme. I saw something about androidx but that did not seem to be a problem and but logcat log + some google’ing gave me the idea to clean all project and delete build and release.  This worked for me: ``` npx react-native-clean-project  ```
 
+Add this to AndroidManifest
+```
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+```
+
 In my case react-native-clean-project  would not delete build folder so I had to do it manually  ``` rm -rf  my-app/android/app/build ```
 
 Then run: ```  react-native run-android  ```
