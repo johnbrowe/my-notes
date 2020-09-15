@@ -1,4 +1,18 @@
 ----
+Date: 15-09-2020
+
+Hasura dump schema
+
+I needed to take a backup of Hasura's Postgres tables.
+
+I used curl like this:
+``` 
+curl -d '{"opts": ["-O", "-x", "--schema", "public", "--schema-only"]}' -H "x-hasura-admin-secret: your_hasura_secret_here" https://your-domain.com/v1alpha1/pg_dump > dump.sql
+```
+
+Tags: Hasura, Postgres, Curl
+
+----
 Date: 18-08-2020
 
 React Native App stopped working after  package added  App stopped working after installing react-native-device-info  I tried to figure out what went wrong in logcat as well as looking through the repo readme. I saw something about androidx but that did not seem to be a problem and but logcat log + some google’ing gave me the idea to clean all project and delete build and release.  This worked for me: ``` npx react-native-clean-project  ```
