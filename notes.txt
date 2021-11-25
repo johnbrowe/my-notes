@@ -1,4 +1,17 @@
 ----
+Date: 25-11-2021
+
+Open FileZilla > Edit > Settings. Then in the sidebar, choose Connection > FTP > SFTP. Click “Add key file” and link your Private Key (id_rsa).
+
+Configure new site with:
+- Protocol: SFTP – SSH File Transfer Protocol
+- Host: The droplet’s IP Address
+- Port: 22
+- Logon Type: Interactive
+- User: yourname
+
+Tags: ssh, sftp, filezilla
+----
 Date: 05-10-2020
 
 .bashrc instead of bash_profile
